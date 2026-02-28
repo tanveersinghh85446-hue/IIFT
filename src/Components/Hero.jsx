@@ -260,7 +260,7 @@ export default function Hero() {
                 Connect With Us !
               </h2>
 
-              <div className="flex gap-4">
+              <div className=" lg:flex gap-4 grid grid-cols-4">
 
                 <a href="https://www.facebook.com/profile.php?id=61588547045586"><button className="bg-white transition-transform duration-300 hover:scale-150 h-12 w-12 rounded-full items-center flex justify-center">
                   <FaFacebookF className="text-blue-600 text-2xl" />
