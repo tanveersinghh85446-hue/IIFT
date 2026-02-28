@@ -125,16 +125,16 @@ export default function Kmore() {
               <p className="text-gray-500">Head of Department</p>
             </div>
 
-            <div className="bg-white shadow-lg p-6 rounded-xl hover:scale-105 transition duration-500">
+            {/* <div className="bg-white shadow-lg p-6 rounded-xl hover:scale-105 transition duration-500">
               <img className="h-35 w-35 bg-gray-200 rounded-full mx-auto mb-4" src="Minder Devi.jpeg" alt="img" />
               <h3 className="font-semibold text-lg">Minder Devi</h3>
               <p className="text-gray-500">Marketing Head</p>
-            </div>
+            </div> */}
 
             <div className="bg-white shadow-lg p-6 rounded-xl hover:scale-105 transition duration-500">
               <img className="h-35 w-35 bg-gray-200 rounded-full mx-auto mb-4" src="Vinay Soni.jpeg" alt="img" />
               <h3 className="font-semibold text-lg">Vinay Rojha</h3>
-              <p className="text-gray-500">Career Counselor</p>
+              <p className="text-gray-500"> Marketing Head & Managing Director</p>
             </div>
 
             <div className="bg-white shadow-lg p-6 rounded-xl hover:scale-105 transition duration-500">
@@ -146,7 +146,7 @@ export default function Kmore() {
             <div className="bg-white shadow-lg p-6 rounded-xl hover:scale-105 transition duration-500">
               <img className="h-35 w-35 bg-gray-200 rounded-full mx-auto mb-4" src="Anjali.jpeg" alt="img" />
               <h3 className="font-semibold text-lg">Anjali Singh</h3>
-              <p className="text-gray-500">Placement Codinator</p>
+              <p className="text-gray-500">Career & Placement Codinator</p>
             </div>
 
           </div>

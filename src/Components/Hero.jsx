@@ -59,83 +59,60 @@ export default function Hero() {
     <div>
 
       {/* HERO SECTION */}
-      <section className="relative w-full h-screen overflow-hidden">
+      <section className="relative w-full h-screen flex items-center justify-center text-center overflow-hidden">
 
-        {/* Sliding Image */}
+        {/* Background Image */}
         <motion.img
           key={index}
           src={images[index]}
-          initial={{ x: "100%" }}
-          animate={{ x: 0 }}
-          exit={{ x: "-100%" }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
           className="absolute w-full h-full object-cover"
         />
 
-        <div className="absolute inset-0 bg-linear-to-r from-black/70 to-black/40"></div>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/70"></div>
 
-        {/* TOP BADGE */}
+        {/* Content */}
+        <div className="relative z-10 px-6 max-w-4xl text-white">
 
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 z-20">
-          <span
-            className="flex items-center gap-2 px-6 py-2 text-sm md:text-base font-semibold tracking-wider 
-    bg-white/10 backdrop-blur-md border border-white/20 
-    rounded-full text-white shadow-lg "
-            >
-            <GiEarthAmerica className="text-3xl" />
-            World’s Best Institution
-          </span>
-        </div>
+          {/* Small Top Heading */}
+          <p className="uppercase tracking-widest text-sm md:text-base text-blue-400 mb-4">
+            World’s Best Institute
+          </p>
 
-        <div className="absolute inset-0 flex items-center  justify-center text-white text-center z-10 px-4">
-          <div className="max-w-4xl">
-            <h2 className="text-3xl md:text-6xl font-bold leading-tight">
-              INTERNATIONAL INSTITUTE OF <br />
-              <span className="text-blue-600">FUTURISTIC TECHNOLOGY</span>
-            </h2>
+          {/* Main Heading */}
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight">
+            International Institute of <br />
+            <span className="text-blue-500">
+              Futuristic Technology
+            </span>
+          </h1>
 
-            {/* TAGLINE SECTION */}
-            <div className="mt-6 space-y-3">
+          {/* Tagline */}
+          <p className="mt-6 text-lg md:text-xl text-gray-200">
+            Think Smart | Learn Smart <br />
+            <span className="text-blue-400 font-semibold">
+              Skill Up with IIFT
+            </span>
+          </p>
 
-              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl 
-  font-bold tracking-wide">
-                <span className="bg-linear-to-r from-red-500 to-yellow-400 bg-clip-text text-transparent">
-                  Think Smart
-                </span>
-                <span className="mx-2 text-white">|</span>
-                <span className="bg-linear-to-r from-red-500 to-yellow-400 bg-clip-text text-transparent">
-                  Learn Smart
-                </span>
-              </h3>
+          {/* Buttons */}
+          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
 
-              <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
-                <span className="bg-linear-to-r from-red-500 via-orange-500 to-yellow-400 bg-clip-text text-transparent">
-                  Skill Up with
-                </span>
-                <span className="ml-3 text-blue-500 font-serif font-extrabold">
-                  IIFT
-                </span>
-              </h4>
+            <Link to="/course">
+              <button className="px-8 py-3 bg-blue-600 rounded-lg font-semibold hover:bg-white hover:text-black transition duration-300 w-full sm:w-auto">
+                Explore Courses
+              </button>
+            </Link>
 
-            </div>
+            <Link to="/apply">
+              <button className="px-8 py-3 border-2 border-white rounded-lg font-semibold hover:bg-white hover:text-black transition duration-300 w-full sm:w-auto">
+                Apply Now
+              </button>
+            </Link>
 
-            <p className="mt-6 text-lg md:text-xl">
-              Empowering the next generation with advanced education and innovation.
-            </p>
-
-            <div className="mt-8 flex justify-center gap-6">
-              <Link to="/course">
-                <button className="px-8 py-3 bg-blue-600 font-semibold rounded-lg hover:bg-white hover:text-black transition duration-300">
-                  Explore Courses
-                </button>
-              </Link>
-
-              <Link to="/apply">
-                <button className="px-8 py-3 bg-blue-600 font-semibold rounded-lg hover:bg-white hover:text-black transition duration-300">
-                  Apply
-                </button>
-              </Link>
-            </div>
           </div>
         </div>
       </section>
@@ -180,7 +157,7 @@ export default function Hero() {
               { icon: <FaHandshakeSimple />, title: "Strong Brand Reputation" },
               { icon: <BsPersonVcardFill />, title: "Real-World Projects" },
               { icon: <RiGalleryFill />, title: "360° Career Support" },
-              { icon: <FaGlobe />, title: "BIA® Alumni Status" },
+              { icon: <FaGlobe />, title: "IIFT® Alumni Status" },
             ].map((item, i) => (
               <div key={i} className="bg-blue-500 rounded-2xl p-6 md:p-8 shadow-lg text-center hover:scale-105 transition duration-300">
                 <div className="text-4xl md:text-5xl mx-auto mb-4 flex justify-center">

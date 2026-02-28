@@ -41,7 +41,7 @@ export default function Course() {
             {/* WD COMPLETED */}
             <details className="group max-w-6xl mx-auto p-8 rounded-2xl shadow-xl border transition-all duration-300">
 
-              <summary className="cursor-pointer font-bold text-3xl text-center flex items-center justify-center gap-3">
+              <summary className="cursor-pointer font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-center flex items-center justify-center gap-3">
                 <span><TbDeviceDesktopCode className='text-blue-600 text-4xl transition-transform duration-300 hover:scale-150' /></span>
                 WEB DEVELOPMENT FULL SYLLABUS
               </summary>
@@ -161,7 +161,7 @@ export default function Course() {
             {/*   WS COMPLETED */}
             <details className=" mt-4 group max-w-6xl mx-auto p-8 rounded-2xl shadow-xl border transition-all duration-300">
 
-              <summary className="cursor-pointer font-bold text-3xl text-center flex items-center justify-center gap-3">
+              <summary className="cursor-pointer font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-center flex items-center justify-center gap-3">
                 <span><FaDatabase className='text-4xl text-green-600 transition-transform duration-300 hover:scale-150' /></span>
                 DATA SCIENCE – FULL COURSE SYLLABUS
               </summary>
@@ -313,7 +313,7 @@ export default function Course() {
             {/* DA COMPLETED */}
             <details className=" mt-4 group max-w-6xl mx-auto p-8 rounded-2xl shadow-xl border transition-all duration-300">
 
-              <summary className="cursor-pointer font-bold text-3xl text-center flex items-center justify-center gap-3">
+              <summary className="cursor-pointer font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-center flex items-center justify-center gap-3">
                 <span className="text-emerald-600"><MdDataExploration className='text-4xl text-violet-600 transition-transform duration-300 hover:scale-150' /></span>
                 DATA ANALYTICS – FULL COURSE SYLLABUS
               </summary>
@@ -453,7 +453,7 @@ export default function Course() {
             {/* EH COMPLETED */}
             <details className=" mt-4 group max-w-6xl mx-auto p-8 rounded-2xl shadow-xl border transition-all duration-300">
 
-              <summary className="cursor-pointer font-bold text-3xl text-center flex items-center justify-center gap-3">
+              <summary className="cursor-pointer font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-center flex items-center justify-center gap-3">
                 <span className="text-emerald-400"><TbBrandHackerrank className='text-4xl text-red-600 transition-transform duration-300 hover:scale-150' /></span>
                 ETHICAL HACKING – FULL COURSE SYLLABUS
               </summary>
@@ -603,7 +603,7 @@ export default function Course() {
             {/* DM COMPLETED */}
             <details className=" mt-4 group max-w-6xl mx-auto p-8 rounded-2xl shadow-xl border transition-all duration-300">
 
-              <summary className="cursor-pointer font-bold text-3xl text-cente flex items-center justify-center gap-3">
+              <summary className="cursor-pointer font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-center flex items-center justify-center gap-3">
                 <span className="text-purple-600"><AiOutlineStock className='text-4xl transition-transform duration-300 hover:scale-150' /></span>
                 DIGITAL MARKETING
               </summary>
@@ -737,7 +737,7 @@ export default function Course() {
             {/*DIPLOMA IN INTERIOR DESIGN COMPLETED */}
             <details className=" mt-4 group max-w-6xl mx-auto p-8 rounded-2xl shadow-xl border transition-all duration-300">
 
-              <summary className="cursor-pointer font-bold text-3xl text-center flex items-center justify-center gap-3">
+              <summary className="cursor-pointer font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-center flex items-center justify-center gap-3">
                 <span className="text-amber-600"><GiDiploma className='text-4xl text-yellow-300 transition-transform duration-300 hover:scale-150' /></span>
                 DIPLOMA IN INTERIOR DESIGN
               </summary>
@@ -870,7 +870,8 @@ export default function Course() {
             {/* ADVANCED FINANCE & ACCOUNTING COMPLETED */}
             <details className=" mt-4 group max-w-6xl mx-auto p-8 rounded-2xl shadow-xl border transition-all duration-300">
 
-              <summary className="cursor-pointer font-bold text-3xl text-center flex items-center justify-center gap-3">
+              <summary className="cursor-pointer font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-center flex items-center justify-center gap-3">
+
                 <span className="text-blue-600"><GiTakeMyMoney className='text-4xl text-green-400 transition-transform duration-300 hover:scale-150' /></span>
                 ADVANCED FINANCE & ACCOUNTING
               </summary>
@@ -989,7 +990,7 @@ export default function Course() {
             {/* DIPLOMA IN HUMAN RESOURCE MANAGEMENT COMPLETED */}
             <details className=" mt-4 group max-w-6xl mx-auto p-8 rounded-2xl shadow-xl border transition-all duration-300">
 
-              <summary className="cursor-pointer font-bold text-3xl text-cente flex items-center justify-center gap-3">
+              <summary className="cursor-pointer font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-center flex items-center justify-center gap-3">
                 <span className='flex gap-2'> <GrResources className='text-4xl text-pink-500 transition-transform duration-300 hover:scale-150' />DIPLOMA IN HUMAN RESOURCE MANAGEMENT</span>
               </summary>
 
