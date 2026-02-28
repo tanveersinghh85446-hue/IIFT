@@ -76,12 +76,12 @@ export default function Hero() {
 
         {/* TOP BADGE */}
 
-        <div className="absolute top-35 left-1/2 -translate-x-1/2 z-20">
+        <div className="absolute top-20 left-1/2 -translate-x-1/2 z-20">
           <span
             className="flex items-center gap-2 px-6 py-2 text-sm md:text-base font-semibold tracking-wider 
     bg-white/10 backdrop-blur-md border border-white/20 
-    rounded-full text-white shadow-lg"
-          >
+    rounded-full text-white shadow-lg "
+            >
             <GiEarthAmerica className="text-3xl" />
             World’s Best Institution
           </span>

@@ -11,7 +11,7 @@ function Navbar() {
       </div>
 
       {/* Title */}
-      <div className="font-serif text-lg md:text-3xl lg:text-[3vh]">
+      <div className="font-serif text-lg hidden lg:block  md:text-3xl lg:text-[3vh]">
         INTERNATIONAL INSTITUTE OF FUTURISTIC TECHNOLOGY
       </div>
 
