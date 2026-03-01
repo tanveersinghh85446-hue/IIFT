@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { GiEarthAmerica } from "react-icons/gi";
 
 import {
   FaFacebookF,
@@ -91,24 +90,32 @@ export default function Hero() {
           </h1>
 
           {/* Tagline */}
-          <p className="mt-6 text-lg md:text-xl text-gray-200">
-            Think Smart | Learn Smart <br />
-            <span className="text-blue-400 font-semibold">
-              Skill Up with IIFT
-            </span>
+          <p className="mt-6 text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-center drop-shadow-md">
+
+            <span className="text-red-500">Think</span>{" "}
+            <span className="text-yellow-400">Smart</span>{" "}
+            |{" "}
+            <span className="text-red-500">Learn</span>{" "}
+            <span className="text-yellow-400">Smart</span>
+
+            <br />
+
+            <span className="text-yellow-400">Skill Up with </span>
+            <span className="text-blue-400 font-bold">IIFT</span>
+
           </p>
 
           {/* Buttons */}
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
 
             <Link to="/course">
-              <button className="px-8 py-3 bg-blue-600 rounded-lg font-semibold hover:bg-white hover:text-black transition duration-300 w-full sm:w-auto">
+              <button className="px-5 py-2 sm:px-8 sm:py-3 bg-blue-600 rounded-lg font-semibold hover:bg-white hover:text-black transition duration-300 w-full sm:w-auto">
                 Explore Courses
               </button>
             </Link>
 
             <Link to="/apply">
-              <button className="px-8 py-3 border-2 border-white rounded-lg font-semibold hover:bg-white hover:text-black transition duration-300 w-full sm:w-auto">
+              <button className="px-5 py-2 sm:px-8 sm:py-3 border-2 border-white rounded-lg font-semibold hover:bg-white hover:text-black transition duration-300 w-full sm:w-auto">
                 Apply Now
               </button>
             </Link>
@@ -124,7 +131,7 @@ export default function Hero() {
           animate={{ x: ["0%", "-100%"] }}
           transition={{
             repeat: Infinity,
-            duration: 20,
+            duration: 4,
             ease: "linear",
           }}
         >
@@ -149,8 +156,8 @@ export default function Hero() {
         </div>
 
         {/* CARDS */}
-        <div className="py-12 md:py-16 px-4 md:px-8">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="py-8 md:py-16 px-4 md:px-8">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
             {[
               { icon: <FaUserGraduate />, title: "Globally Recognized Certification" },
               { icon: <FaRegLightbulb />, title: "Hands-On Training" },
@@ -159,11 +166,11 @@ export default function Hero() {
               { icon: <RiGalleryFill />, title: "360° Career Support" },
               { icon: <FaGlobe />, title: "IIFT® Alumni Status" },
             ].map((item, i) => (
-              <div key={i} className="bg-blue-500 rounded-2xl p-6 md:p-8 shadow-lg text-center hover:scale-105 transition duration-300">
-                <div className="text-4xl md:text-5xl mx-auto mb-4 flex justify-center">
+              <div key={i} className="bg-blue-500 rounded-2xl p-4 md:p-8 shadow-lg text-center hover:scale-105 transition duration-300">
+                <div className="text-3xl md:text-5xl mx-auto mb-3 flex justify-center">
                   {item.icon}
                 </div>
-                <h3 className="text-lg md:text-xl font-bold mb-3 text-black">
+                <h3 className="text-base md:text-xl font-bold mb-2 text-black">
                   {item.title}
                 </h3>
               </div>
@@ -207,7 +214,7 @@ export default function Hero() {
             animate={{ x: ["0%", "-100%"] }}
             transition={{
               repeat: Infinity,
-              duration: 20,
+              duration: 4,
               ease: "linear",
             }}
           >
@@ -237,41 +244,52 @@ export default function Hero() {
                 Connect With Us !
               </h2>
 
-              <div className=" lg:flex gap-4 grid grid-cols-4">
+              <div className="lg:flex gap-4 grid grid-cols-4">
 
-                <a href="https://www.facebook.com/profile.php?id=61588547045586"><button className="bg-white transition-transform duration-300 hover:scale-150 h-12 w-12 rounded-full items-center flex justify-center">
-                  <FaFacebookF className="text-blue-600 text-2xl" />
-                </button></a>
+                <a href="https://www.facebook.com/profile.php?id=61588547045586">
+                  <button className="bg-white transition-transform duration-300 hover:scale-150 h-9 w-9 md:h-12 md:w-12 rounded-full items-center flex justify-center">
+                    <FaFacebookF className="text-blue-600 text-lg md:text-2xl" />
+                  </button></a>
 
-                <a href="https://www.instagram.com/iift.official/"><button className="bg-white transition-transform duration-300 hover:scale-150 h-12 w-12 rounded-full items-center flex justify-center">
-                  <FaInstagramSquare className="text-pink-600 text-2xl" />
-                </button></a>
+                <a href="https://www.instagram.com/iift.official/">
+                  <button className="bg-white transition-transform duration-300 hover:scale-150 h-9 w-9 md:h-12 md:w-12 rounded-full items-center flex justify-center">
+                    <FaInstagramSquare className="text-pink-600 text-lg md:text-2xl" />
+                  </button></a>
 
-                <a href="https://www.youtube.com/@IIFT_Academy"><button className="bg-white transition-transform duration-300 hover:scale-150 h-12 w-12 rounded-full items-center flex justify-center">
-                  <FaYoutube className="text-red-600 text-2xl" />
-                </button></a>
+                <a href="https://www.youtube.com/@IIFT_Academy">
+                  <button className="bg-white transition-transform duration-300 hover:scale-150 h-9 w-9 md:h-12 md:w-12 rounded-full items-center flex justify-center">
+                    <FaYoutube className="text-red-600 text-lg md:text-2xl" />
+                  </button></a>
 
-                <a href=""><button className="bg-white transition-transform duration-300 hover:scale-150 h-12 w-12 rounded-full items-center flex justify-center">
-                  <FaLinkedin className="text-blue-800 text-2xl" />
-                </button></a>
+                <a href="">
+                  <button className="bg-white transition-transform duration-300 hover:scale-150 h-9 w-9 md:h-12 md:w-12 rounded-full items-center flex justify-center">
+                    <FaLinkedin className="text-blue-800 text-lg md:text-2xl" />
+                  </button></a>
 
-                <a href="https://x.com/IIFT367437"><button className="bg-white transition-transform duration-300 hover:scale-150 h-12 w-12 rounded-full items-center flex justify-center">
-                  <FaXTwitter className=" text-black text-2xl" />
-                </button></a>
+                <a href="https://x.com/IIFT367437">
+                  <button className="bg-white transition-transform duration-300 hover:scale-150 h-9 w-9 md:h-12 md:w-12 rounded-full items-center flex justify-center">
+                    <FaXTwitter className="text-black text-lg md:text-2xl" />
+                  </button></a>
 
-                <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=iift.education01@gmail.com&su=Inquiry&body=Hello%20IIFT%20Team"
-                  target="_blank" rel="noopener noreferrer" className="bg-white transition-transform duration-300 hover:scale-150 h-12 w-12 rounded-full flex items-center justify-center"><IoIosMailUnread className="text-yellow-300 text-2xl" /></a>
-
-                <a
-                  href="https://wa.me/919560307098"
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=iift.education01@gmail.com&su=Inquiry&body=Hello%20IIFT%20Team"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white transition-transform duration-300 hover:scale-150 h-12 w-12 rounded-full flex items-center justify-center"><BsWhatsapp className="text-green-600 text-2xl" /></a>
+                  className="bg-white transition-transform duration-300 hover:scale-150 h-9 w-9 md:h-12 md:w-12 rounded-full flex items-center justify-center">
+                  <IoIosMailUnread className="text-yellow-300 text-lg md:text-2xl" />
+                </a>
+
+                <a href="https://wa.me/919560307098"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white transition-transform duration-300 hover:scale-150 h-9 w-9 md:h-12 md:w-12 rounded-full flex items-center justify-center">
+                  <BsWhatsapp className="text-green-600 text-lg md:text-2xl" />
+                </a>
+
               </div>
             </div>
           </div>
 
+          {/* India-Based. Globally Focused */}
           <div>
             <h3 className="text-lg md:text-2xl font-bold mb-4">
               India-Based. Globally Focused
@@ -301,36 +319,43 @@ export default function Hero() {
               </p>
             ))}
           </div>
+
+          {/* Quick Links */}
           <div>
-            <h3 className="text-lg md:text-2xl font-bold mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-xl flex-col flex">
-              <Link className="hover:text-black" to="/">Home</Link>
-              <Link className="hover:text-black" to="/contact">Contact</Link>
-              <Link className="hover:text-black" to="/course">Course</Link>
-              <Link className="hover:text-black" to="/about">About</Link>
-              <Link className="hover:text-black" to="/know-more">Know More</Link>
+            <h3 className="text-lg md:text-2xl font-bold mb-4">
+              Quick Links
+            </h3>
+            <ul className="flex flex-col space-y-2 text-base md:text-base">
+              <Link className="cursor-pointer hover:text-black" to="/">Home</Link>
+              <Link className="cursor-pointer hover:text-black" to="/contact">Contact</Link>
+              <Link className="cursor-pointer hover:text-black" to="/course">Course</Link>
+              <Link className="cursor-pointer hover:text-black" to="/about">About</Link>
+              <Link className="cursor-pointer hover:text-black" to="/know-more">Know More</Link>
             </ul>
           </div>
 
+          {/* Contact Us */}
           <div>
-            <h3 className="text-lg md:text-2xl font-bold mb-4">Contact Us</h3>
-            <div className="space-y-2 text-xl">
-              <p className="flex items-center gap-2"><FaPhoneAlt /> +91 9217661339 +91 9560307098</p>
-              <p className="flex items-center gap-2"><FaEnvelope /> iift.education01@gmail.com</p>
-              <p className="flex items-center gap-2"><FaMapMarkerAlt /> India, Dwarka</p>
+            <h3 className="text-lg md:text-2xl font-bold mb-4">
+              Contact Us
+            </h3>
+            <div className="space-y-2 text-base md:text-base">
+              <p className="flex items-center gap-2 cursor-pointer"><FaPhoneAlt /> +91 9217661339 +91 9560307098</p>
+              <p className="flex items-center gap-2 cursor-pointer"><FaEnvelope /> iift.education01@gmail.com</p>
+              <p className="flex items-center gap-2 cursor-pointer"><FaMapMarkerAlt /> India, Dwarka</p>
             </div>
 
+            {/* Apply Button */}
             <Link to="/apply">
-              <button className="mt-8 px-8 py-3 bg-white font-semibold rounded-lg transition text-black  text-2xl duration-300">
+              <button className="mt-6 px-4 py-2 sm:px-6 sm:py-2.5 md:px-8 md:py-3 bg-white font-semibold rounded-lg transition text-black text-base md:text-2xl duration-300">
                 Apply
               </button>
             </Link>
           </div>
-
         </div>
 
-        <div className="bg-blue-950 text-sm flex justify-center h-12 items-center mt-4">
-          <p className="text-white">
+        <div className="bg-blue-950 flex justify-center items-center mt-4 h-10 md:h-12 px-2 md:px-0">
+          <p className="text-white text-xs sm:text-sm md:text-sm text-center">
             © 2026 IIFT | All Rights Reserved | Designed by Web Developer
           </p>
         </div>

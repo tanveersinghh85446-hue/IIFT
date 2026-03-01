@@ -132,8 +132,8 @@ export default function Apply() {
 
       </section>
 
-      <div className="bg-blue-950 text-sm flex justify-center h-12 items-center mt-4">
-        <p className="text-white">
+      <div className="bg-blue-950 flex justify-center items-center mt-4 h-10 md:h-12 px-2 md:px-0">
+        <p className="text-white text-xs sm:text-sm md:text-sm text-center">
           © 2026 IIFT | All Rights Reserved | Designed by Web Developer
         </p>
       </div>
