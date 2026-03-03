@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
 import {
@@ -64,8 +64,9 @@ export default function Hero() {
         <motion.img
           key={index}
           src={images[index]}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ x: "100%" }}
+          animate={{ x: "0%" }}
+          exit={{ x: "-100%" }}
           transition={{ duration: 1 }}
           className="absolute w-full h-full object-cover"
         />
@@ -77,9 +78,20 @@ export default function Hero() {
         <div className="relative z-10 px-6 max-w-4xl text-white">
 
           {/* Small Top Heading */}
-          <p className="uppercase tracking-widest text-sm md:text-base text-blue-400 mb-4">
+          {/* <p className="uppercase tracking-widest text-sm md:text-base text-blue-400 mb-4">
             World’s Best Institute
-          </p>
+          </p> */}
+          <div>
+            <motion.h2
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+              className="uppercase tracking-widest text-sm md:text-base text-blue-400 mb-4"
+            >
+              World’s Best Institute
+            </motion.h2>
+          </div>
 
           {/* Main Heading */}
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight">
@@ -114,12 +126,17 @@ export default function Hero() {
               </button>
             </Link>
 
-            <Link to="/apply">
-              <button className="px-5 py-2 sm:px-8 sm:py-3 border-2 border-white rounded-lg font-semibold hover:bg-white hover:text-black transition duration-300 w-full sm:w-auto">
-                Apply Now
-              </button>
-            </Link>
-
+            <motion.button
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="px-5 py-2 sm:px-8 sm:py-3 border-2 border-white rounded-lg font-semibold hover:bg-white hover:text-black transition duration-300 w-full sm:w-auto"
+            >
+              Apply Now
+            </motion.button>
           </div>
         </div>
       </section>
@@ -131,7 +148,7 @@ export default function Hero() {
           animate={{ x: ["0%", "-100%"] }}
           transition={{
             repeat: Infinity,
-            duration: 4,
+            duration: 8,
             ease: "linear",
           }}
         >
@@ -150,14 +167,21 @@ export default function Hero() {
 
         {/* HEADING */}
         <div className="flex items-center justify-center mt-12 md:mt-16 px-4 text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+          <motion.h2
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold"
+          >
             The <span className="text-blue-600 font-serif">IIFT</span> pro's
-          </h2>
+          </motion.h2>
         </div>
 
         {/* CARDS */}
         <div className="py-8 md:py-16 px-4 md:px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+
             {[
               { icon: <FaUserGraduate />, title: "Globally Recognized Certification" },
               { icon: <FaRegLightbulb />, title: "Hands-On Training" },
@@ -166,15 +190,25 @@ export default function Hero() {
               { icon: <RiGalleryFill />, title: "360° Career Support" },
               { icon: <FaGlobe />, title: "IIFT® Alumni Status" },
             ].map((item, i) => (
-              <div key={i} className="bg-blue-500 rounded-2xl p-4 md:p-8 shadow-lg text-center hover:scale-105 transition duration-300">
+
+              <motion.div
+                key={i}
+                initial={{ y: 60, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: i * 0.2 }}
+                viewport={{ once: true }}
+                className="bg-blue-500 rounded-2xl p-4 md:p-8 shadow-lg text-center hover:scale-105 transition duration-300"
+              >
                 <div className="text-3xl md:text-5xl mx-auto mb-3 flex justify-center">
                   {item.icon}
                 </div>
                 <h3 className="text-base md:text-xl font-bold mb-2 text-black">
                   {item.title}
                 </h3>
-              </div>
+              </motion.div>
+
             ))}
+
           </div>
         </div>
 
@@ -214,7 +248,7 @@ export default function Hero() {
             animate={{ x: ["0%", "-100%"] }}
             transition={{
               repeat: Infinity,
-              duration: 4,
+              duration: 8,
               ease: "linear",
             }}
           >
@@ -240,7 +274,7 @@ export default function Hero() {
 
             {/* ICONS */}
             <div className="flex flex-col items-start justify-start mt-8">
-              <h2 className="text-3xl font-bold text-white mb-6">
+              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-6">
                 Connect With Us !
               </h2>
 
@@ -346,11 +380,17 @@ export default function Hero() {
             </div>
 
             {/* Apply Button */}
-            <Link to="/apply">
-              <button className="mt-6 px-4 py-2 sm:px-6 sm:py-2.5 md:px-8 md:py-3 bg-white font-semibold rounded-lg transition text-black text-base md:text-2xl duration-300">
-                Apply
-              </button>
-            </Link>
+            <motion.button
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="px-5 py-2 sm:px-8 sm:py-3 border-2 border-white rounded-lg font-semibold hover:bg-white hover:text-black transition duration-300 w-full sm:w-auto"
+            >
+              Apply Now
+            </motion.button>
           </div>
         </div>
 

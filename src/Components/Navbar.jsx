@@ -1,59 +1,59 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { HiMenu, HiX } from "react-icons/hi";
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-
+  const location = useLocation();
   return (
     <nav className="bg-blue-600 text-white shadow-md w-full">
-      <div className="flex items-center justify-between px-4 md:px-8 py-4">
+      <div className="flex flex-col md:flex-row items-center justify-between px-4 md:px-8 py-4 gap-4">
 
-        {/* Left Logo */}
+        {/* Logo */}
         <div className="flex items-center gap-3">
           <img
-            className="h-16 sm:h-20 md:h-24 w-auto"
+            className="h-14 sm:h-16 md:h-20 w-auto"
             src="LOGO2.png"
             alt="Logo"
           />
         </div>
-        {/* Center Heading */}
-        <div className="flex-1 text-center">
-          <h1 className="font-bold text-lg md:text-2xl lg:text-3xl xl:text-4xl leading-tight">
+
+        {/* Heading */}
+        <div className="text-center">
+          <h1 className="font-bold text-base sm:text-lg md:text-2xl lg:text-3xl leading-tight">
             INTERNATIONAL INSTITUTE OF FUTURISTIC TECHNOLOGY
           </h1>
         </div>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex gap-8 font-semibold text-xl">
-          <Link className="hover:text-black transition" to="/">Home</Link>
-          <Link className="hover:text-black transition" to="/course">Course</Link>
-          <Link className="hover:text-black transition" to="/contact">Contact</Link>
-          <Link className="hover:text-black transition" to="/know-more">Know More</Link>
-          <Link className="hover:text-black transition" to="/about">About</Link>
-        </div>
+        {/* Navigation Links */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 font-semibold text-sm sm:text-base md:text-lg"
+        >
 
-        {/* Hamburger Icon */}
-        <div className="md:hidden text-4xl cursor-pointer ml-2">
-          {isOpen ? (
-            <HiX onClick={() => setIsOpen(false)} />
-          ) : (
-            <HiMenu onClick={() => setIsOpen(true)} />
-          )}
-        </div>
+          {[
+            { path: "/", name: "Home" },
+            { path: "/course", name: "Course" },
+            { path: "/contact", name: "Contact" },
+            { path: "/know-more", name: "Know More" },
+            { path: "/about", name: "About" },
+          ].map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`transition duration-300 ${location.pathname === item.path
+                ? "text-black"
+                : "hover:text-black"
+                }`}
+            >
+              {item.name}
+            </Link>
+          ))}
+
+        </motion.div>
 
       </div>
-
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden flex flex-col items-end pr-6 gap-2 pb-4 font-semibold text-base bg-blue-700">
-          <Link onClick={() => setIsOpen(false)} to="/">Home</Link>
-          <Link onClick={() => setIsOpen(false)} to="/course">Course</Link>
-          <Link onClick={() => setIsOpen(false)} to="/contact">Contact</Link>
-          <Link onClick={() => setIsOpen(false)} to="/know-more">Know More</Link>
-          <Link onClick={() => setIsOpen(false)} to="/about">About</Link>
-        </div>
-      )}
     </nav>
   );
 }

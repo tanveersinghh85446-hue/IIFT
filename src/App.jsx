@@ -14,9 +14,13 @@ function App() {
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    setShowPopup(true);
-  }, []);
+    const hasSeenPopup = localStorage.getItem("careerPopupShown");
 
+    if (hasSeenPopup !== "true") {
+      setShowPopup(true);
+      localStorage.setItem("careerPopupShown", "true");
+    }
+  }, []);
   return (
     <div className="relative">
 

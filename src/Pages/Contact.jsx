@@ -2,6 +2,8 @@ import React from 'react'
 import { FaHourglassHalf } from "react-icons/fa6";
 import { CiLocationOn, CiPhone } from "react-icons/ci";
 import { MdOutlineMarkEmailRead } from "react-icons/md";
+import { motion } from "framer-motion";
+
 
 export default function Contact() {
     return (
@@ -32,65 +34,82 @@ export default function Contact() {
 
             {/* FAQ Section */}
             <section className="py-6 sm:py-12 px-3 sm:px-6 md:px-12">
-                <div className="max-w-4xl sm:max-w-3xl mx-auto space-y-6 sm:space-y-10">
+                <div className="max-w-6xl mx-auto">
 
-                    {[
-                        {
-                            title: "Frequently Asked Questions",
-                            subtitle: "Find answers to common questions about courses at IIFT.",
-                            items: [
-                                ["What courses are available at IIFT?", "IIFT offers Web Development, Data Science, AI, Cyber Security, Digital Marketing, and Software Development."],
-                                ["What is the duration of the courses?", "The course duration ranges from 3 months to 1 year depending on the selected program."],
-                                ["Can beginners apply?", "Yes, beginners can apply. We offer foundation-level courses."]
-                            ]
-                        },
-                        {
-                            title: "Certification & Placement",
-                            subtitle: "Learn more about certification and career support at IIFT.",
-                            items: [
-                                ["Will I receive a certificate?", "Yes, students receive an official certificate after completion."],
-                                ["Does IIFT provide placement assistance?", "Yes, we provide placement support and interview guidance."]
-                            ]
-                        },
-                        {
-                            title: "Mode of Learning",
-                            subtitle: "Explore flexible learning options available at IIFT.",
-                            items: [
-                                ["Are classes online or offline?", "IIFT offers both online and offline learning modes."],
-                                ["Are classes live or recorded?", "We provide live classes and recorded lectures."]
-                            ]
-                        }
-                    ].map((section, index) => (
-                        <div key={index}>
-                            <h2 className="text-xl sm:text-3xl md:text-4xl py-4 sm:py-8 text-black font-serif text-center bg-blue-600 rounded-lg px-3 sm:px-6">
-                                {section.title}
-                            </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                            <p className="text-center text-gray-700 text-xs sm:text-base mt-1 mb-3 sm:mb-6">
-                                {section.subtitle}
-                            </p>
+                        {[
+                            {
+                                title: "Mode of Learning",
+                                subtitle: "Explore flexible learning options available at IIFT.",
+                                items: [
+                                    ["Are classes online or offline?", "IIFT offers both online and offline learning modes."],
+                                    ["Are classes live or recorded?", "We provide live classes and recorded lectures."]
+                                ]
+                            },
+                            {
+                                title: "Certification & Placement",
+                                subtitle: "Learn more about certification and career support at IIFT.",
+                                items: [
+                                    ["Will I receive a certificate?", "Yes, students receive an official certificate after completion."],
+                                    ["Does IIFT provide placement assistance?", "Yes, we provide placement support and interview guidance."]
+                                ]
+                            },
+                            {
+                                title: "Frequently Asked Questions",
+                                subtitle: "Find answers to common questions about courses at IIFT.",
+                                items: [
+                                    ["What courses are available at IIFT?", "IIFT offers Web Development, Data Science, AI, Cyber Security, Digital Marketing, and Software Development."],
+                                    ["What is the duration of the courses?", "The course duration ranges from 3 months to 1 year depending on the selected program."],
+                                    ["Can beginners apply?", "Yes, beginners can apply. We offer foundation-level courses."]
+                                ]
+                            }
+                        ].map((section, index) => (
 
-                            <div className="space-y-3 sm:space-y-4">
-                                {section.items.map((item, i) => (
-                                    <details
-                                        key={i}
-                                        className="bg-white rounded-xl shadow-md p-3 sm:p-6 hover:shadow-xl transition duration-300 group"
-                                    >
-                                        <summary className="flex justify-between items-center cursor-pointer text-sm sm:text-base font-medium list-none">
-                                            {item[0]}
-                                            <span className="text-blue-600 text-lg sm:text-2xl transition-transform duration-300 group-open:rotate-45">
-                                                +
-                                            </span>
-                                        </summary>
-                                        <p className="mt-2 sm:mt-4 text-gray-600 text-xs sm:text-sm">
-                                            {item[1]}
-                                        </p>
-                                    </details>
-                                ))}
-                            </div>
-                        </div>
-                    ))}
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: index * 0.2 }}
+                                viewport={{ once: true }}
+                                className={`${index === 2 ? "md:col-span-2 flex justify-center" : ""}`}
+                            >
 
+                                <div className={`${index === 2 ? "md:w-1/2" : "w-full"}`}>
+
+                                    <h2 className="text-xl sm:text-3xl md:text-4xl py-4 sm:py-8 text-black font-serif text-center bg-blue-600 rounded-lg px-3 sm:px-6">
+                                        {section.title}
+                                    </h2>
+
+                                    <p className="text-center text-gray-700 text-xs sm:text-base mt-1 mb-3 sm:mb-6">
+                                        {section.subtitle}
+                                    </p>
+
+                                    <div className="space-y-3 sm:space-y-4">
+                                        {section.items.map((item, i) => (
+                                            <details
+                                                key={i}
+                                                className="bg-white rounded-xl shadow-md p-3 sm:p-6 hover:shadow-xl transition duration-300 group"
+                                            >
+                                                <summary className="flex justify-between items-center cursor-pointer text-sm sm:text-base font-medium list-none">
+                                                    {item[0]}
+                                                    <span className="text-blue-600 text-lg sm:text-2xl transition-transform duration-300 group-open:rotate-45">
+                                                        +
+                                                    </span>
+                                                </summary>
+                                                <p className="mt-2 sm:mt-4 text-gray-600 text-xs sm:text-sm">
+                                                    {item[1]}
+                                                </p>
+                                            </details>
+                                        ))}
+                                    </div>
+
+                                </div>
+                            </motion.div>
+
+                        ))}
+
+                    </div>
                 </div>
             </section>
 

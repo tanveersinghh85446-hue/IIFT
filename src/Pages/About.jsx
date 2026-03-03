@@ -1,188 +1,197 @@
-import { FaShippingFast, FaLeaf, FaLock } from "react-icons/fa";
+import { motion } from "framer-motion";
 import { MdOndemandVideo } from "react-icons/md";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 60 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8 }
+  }
+};
+
+const stagger = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.2 }
+  }
+};
+
 const About = () => {
   return (
-    <div className="font-sans text-gray-800 bg-gray-50">
+    <div className="font-sans text-gray-800 bg-gray-50 overflow-hidden">
 
-      {/* Header */}
-      <header className="py-8 px-4 text-center">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">
-          International Institute of Futuristic Technology (IIFT)
+      {/*  HEADER */}
+      <motion.header
+        initial={{ opacity: 0, y: -60 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="py-12 px-4 text-center bg-linear-to-r from-blue-700 via-indigo-700 to-blue-900 text-white"
+      >
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
+          International Institute of Futuristic Technology
         </h1>
-        <p className="mt-2 text-base md:text-lg">
+        <p className="mt-4 text-lg opacity-90">
           Shaping minds for tomorrow's technology
         </p>
-      </header>
+      </motion.header>
 
-      {/* Mission & Vision */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      {/*  MISSION & VISION */}
+      <motion.section
+        variants={stagger}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="py-16 px-4"
+      >
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
 
-          <div className="p-6 bg-blue-500 text-white rounded-lg shadow text-center">
-            <h2 className="text-xl md:text-2xl font-bold mb-4">Mission</h2>
-            <p className="font-semibold text-base md:text-lg">
-              To nurture innovative minds and prepare students for future technologies.
-            </p>
-          </div>
-
-          <div className="p-6 bg-blue-500 text-white rounded-lg shadow text-center">
-            <h2 className="text-xl md:text-2xl font-semibold mb-4">Vision</h2>
-            <p className="font-semibold text-base md:text-lg">
-              To be a leading hub for cutting-edge research and futuristic education.
-            </p>
-          </div>
+          {["Mission", "Vision"].map((item, i) => (
+            <motion.div
+              key={i}
+              variants={fadeUp}
+              whileHover={{ scale: 1.05 }}
+              className="p-10 rounded-3xl backdrop-blur-lg bg-white/40 border border-white shadow-2xl text-center"
+            >
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-blue-700">
+                {item}
+              </h2>
+              <p className="text-lg font-medium">
+                {item === "Mission"
+                  ? "To nurture innovative minds and prepare students for future technologies."
+                  : "To be a leading hub for cutting-edge research and futuristic education."}
+              </p>
+            </motion.div>
+          ))}
 
         </div>
-      </section>
+      </motion.section>
 
-      {/* Overview */}
-      <section className="py-12 bg-blue-500 text-center px-4">
-        <h2 className="text-2xl md:text-3xl font-bold mb-4">
-          About <span className="text-white font-serif">(IIFT)</span>
+      {/*  ABOUT OVERVIEW */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="py-16 bg-linear-to-r from-indigo-600 to-blue-600 text-center text-white px-6"
+      >
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          About <span className="font-serif">(IIFT)</span>
         </h2>
-        <p className="font-medium text-base md:text-xl max-w-4xl mx-auto">
-          International Institute of Futuristic Technology (IIFT) is dedicated to equipping students with knowledge and skills for emerging technologies and global challenges.
+        <p className="text-lg md:text-xl max-w-4xl mx-auto">
+          IIFT is dedicated to equipping students with knowledge and skills
+          for emerging technologies and global challenges.
         </p>
-      </section>
+      </motion.section>
 
-      {/* image */}
-      <section className="py-16 bg-blue-500">
-        <div className="mx-auto px-4">
+      {/*  IMAGE GALLERY */}
+      <motion.section
+        variants={stagger}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="py-20 px-6 bg-gray-100"
+      >
+        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-            <div className="overflow-hidden rounded-2xl shadow-xl group">
+          {["/AB.jpeg", "/AB2.jpeg", "/Team.jpeg"].map((img, i) => (
+            <motion.div
+              key={i}
+              variants={fadeUp}
+              whileHover={{ scale: 1.08 }}
+              className="overflow-hidden rounded-3xl shadow-2xl group relative"
+            >
               <img
-                src="/AB.jpeg"
-                alt="Campus View"
-                className="w-full h-96 md:h-120 object-cover transform group-hover:scale-105 transition duration-500"
+                src={img}
+                alt="Gallery"
+                className="w-full h-96 object-cover transition duration-700 group-hover:scale-110"
               />
-            </div>
-
-            <div className="overflow-hidden rounded-2xl shadow-xl group">
-              <img
-                src="/AB2.jpeg"
-                alt="Students Learning"
-                className="w-full h-96 md:h-120 object-cover transform group-hover:scale-105 transition duration-500"
-              />
-            </div>
-
-            <div className="overflow-hidden rounded-2xl shadow-xl group">
-              <img
-                src="/Team.jpeg"
-                alt="Our Team"
-                className="w-full h-96 md:h-120 object-cover transform group-hover:scale-105 transition duration-500"
-              />
-            </div>
-
-          </div>
+              <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent"></div>
+            </motion.div>
+          ))}
 
         </div>
-      </section>
+      </motion.section>
 
-      <section className="bg-blue-500 t py-20 px-4 mt-10">
-        <div className="max-w-6xl mx-auto text-center">
-
-          <div className="flex justify-center items-center gap-4 mb-10">
-            <MdOndemandVideo className="text-white text-4xl md:text-5xl" />
-            <h2 className="text-3xl md:text-5xl font-bold text-white">
-              Our Learning Environment
-            </h2>
-            <MdOndemandVideo className="text-white text-4xl md:text-5xl" />
-          </div>
-
-          <div className="flex justify-center">
-            <div className="w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
-              <video
-                className="w-full aspect-video object-cover"
-                controls
-              >
-                <source src="VIDEO.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-
-          <h3 className="mt-10 text-2xl md:text-4xl font-serif text-white">
-            Hands On Skill Development
-          </h3>
-
+      {/*  VIDEO SECTION */}
+      <motion.section
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="py-20 bg-linear-to-r from-blue-800 to-indigo-900 text-center text-white px-6"
+      >
+        <div className="flex justify-center items-center gap-4 mb-10 animate-pulse">
+          <MdOndemandVideo className="text-5xl" />
+          <h2 className="text-4xl font-bold">Our Learning Environment</h2>
+          <MdOndemandVideo className="text-5xl" />
         </div>
-      </section>
 
-      {/* USP */}
-      <section className="py-12 bg-blue-500 mt-8 px-4">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
-          Why Choose <span className="text-white font-serif">(IIFT)</span>
+        <div className="max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+          <video className="w-full aspect-video object-cover" controls>
+            <source src="VIDEO.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        <h3 className="mt-10 text-3xl font-serif">
+          Hands On Skill Development
+        </h3>
+      </motion.section>
+
+      {/*  USP SECTION */}
+      <motion.section
+        variants={stagger}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="py-20 px-6 bg-white"
+      >
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+          Why Choose (IIFT)
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
 
-          <div className="p-6 bg-blue-50 rounded-lg text-center">
-            <h3 className="font-semibold text-lg md:text-xl mb-2">
-              Advanced Curriculum
-            </h3>
-            <p className="text-base md:text-lg">
-              Designed for future industries.
-            </p>
-          </div>
-
-          <div className="p-6 bg-blue-50 rounded-lg text-center">
-            <h3 className="font-semibold text-lg md:text-xl mb-2">
-              State-of-the-Art Labs
-            </h3>
-            <p className="text-base md:text-lg">
-              Modern research for hands-on learning.
-            </p>
-          </div>
-
-          <div className="p-6 bg-blue-50 rounded-lg shadow hover:shadow-lg transition text-center">
-            <h3 className="font-semibold text-lg md:text-xl mb-2">
-              Expert Faculty
-            </h3>
-            <p className="text-base md:text-lg">
-              Learn from professionals from top tech backgrounds.
-            </p>
-          </div>
-
-          <div className="p-6 bg-blue-50 rounded-lg shadow hover:shadow-lg transition text-center">
-            <h3 className="font-semibold text-lg md:text-xl mb-2">
-              Global Opportunities
-            </h3>
-            <p className="text-base md:text-lg">
-              International collaborations and internships.
-            </p>
-          </div>
+          {[
+            "Advanced Curriculum",
+            "State-of-the-Art Labs",
+            "Expert Faculty",
+            "Global Opportunities"
+          ].map((item, i) => (
+            <motion.div
+              key={i}
+              variants={fadeUp}
+              whileHover={{ y: -15 }}
+              className="p-8 bg-linear-to-br from-blue-100 to-indigo-100 rounded-2xl shadow-xl text-center"
+            >
+              <h3 className="font-bold text-xl mb-3">{item}</h3>
+              <p>Designed for future industries and global careers.</p>
+            </motion.div>
+          ))}
 
         </div>
-      </section>
+      </motion.section>
 
-      {/* Achievements */}
-      <section className="py-12 bg-gray-50 text-center px-4">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6">
-          Achievements
+      {/*  CTA */}
+      <motion.section
+        initial={{ scale: 0.9, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="py-20 bg-linear-to-r from-blue-600 to-indigo-600 text-white text-center px-6"
+      >
+        <h2 className="text-4xl font-bold mb-6">
+          Shape Your Future with IIFT
         </h2>
-        <ul className="text-base md:text-xl space-y-2 max-w-3xl mx-auto">
-          <li>Partnerships with tech leaders and universities worldwide.</li>
-          <li>Student projects featured in international competitions.</li>
-        </ul>
-      </section>
+        <p className="text-lg">
+          Explore our programs and admissions to begin your journey today.
+        </p>
+      </motion.section>
 
-      {/* Call to Action */}
-      <section className="py-12 bg-blue-600 text-white text-center px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            Shape Your Future with IIFT
-          </h2>
-          <p className="text-base md:text-lg">
-            Explore our programs and admissions to take the first step towards a technology-driven career.
-          </p>
-        </div>
-      </section>
-
-      <div className="bg-blue-950 flex justify-center items-center mt-4 h-10 md:h-12 px-2 md:px-0">
-        <p className="text-white text-xs sm:text-sm md:text-sm text-center">
-          © 2026 IIFT | All Rights Reserved | Designed by Web Developer
+      {/* FOOTER */}
+      <div className="bg-blue-950 flex justify-center items-center h-12">
+        <p className="text-white text-sm text-center">
+          © 2026 IIFT | All Rights Reserved
         </p>
       </div>
 

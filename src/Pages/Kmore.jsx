@@ -1,184 +1,221 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function Kmore() {
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 60 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8 }
+    }
+  };
+
+  const stagger = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gray-50 overflow-hidden">
 
       {/* ================= HERO SECTION ================= */}
       <section className="bg-linear-to-r from-blue-700 via-indigo-700 to-blue-900 text-white py-24 px-6 text-center">
 
-        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">
+        <motion.h1
+          initial={{ opacity: 0, y: -60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight"
+        >
           Shaping The Future With{" "}
-          <span className="text-yellow-300 font-serif">
-            IIFT
-          </span>
-        </h1>
+          <span className="text-yellow-300 font-serif">IIFT</span>
+        </motion.h1>
 
-        <p className="mt-6 text-sm sm:text-lg md:text-xl max-w-3xl mx-auto text-gray-200">
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+          className="mt-6 text-sm sm:text-lg md:text-xl max-w-3xl mx-auto text-gray-200"
+        >
           International Institute of Futuristic Technology is committed to delivering
           industry-ready skills, innovation-driven learning, and career-focused programs.
-        </p>
+        </motion.p>
 
       </section>
 
-      {/* ================= VISION & MISSION ================= */}
-      <section className="py-24 px-6 max-w-6xl mx-auto">
 
-        <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold text-center mb-16 text-blue-700">
+      {/* ================= VISION & MISSION ================= */}
+      <motion.section
+        variants={stagger}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="py-24 px-6 max-w-6xl mx-auto"
+      >
+        <motion.h2 variants={fadeUp}
+          className="text-3xl sm:text-4xl font-bold text-center mb-16 text-blue-700">
           Our Core Foundation
-        </h2>
+        </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-12">
 
-          <div className="bg-white p-8 sm:p-12 rounded-3xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-green-600">
-            <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-green-600">
-              Our Vision
-            </h3>
-            <p className="text-gray-600 leading-relaxed text-sm sm:text-lg">
-              To become a globally recognized institute empowering students with
-              next-generation technical expertise and leadership qualities.
-            </p>
-          </div>
-
-          <div className="bg-white p-8 sm:p-12 rounded-3xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-blue-600">
-            <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-blue-600">
-              Our Mission
-            </h3>
-            <p className="text-gray-600 leading-relaxed text-sm sm:text-lg">
-              To provide practical, industry-aligned training that prepares students
-              for real-world challenges and successful professional careers.
-            </p>
-          </div>
+          {[{
+            title: "Our Vision",
+            color: "text-green-600",
+            border: "border-green-600",
+            text: "To become a globally recognized institute empowering students with next-generation technical expertise and leadership qualities."
+          },
+          {
+            title: "Our Mission",
+            color: "text-blue-600",
+            border: "border-blue-600",
+            text: "To provide practical, industry-aligned training that prepares students for real-world challenges and successful professional careers."
+          }].map((item, i) => (
+            <motion.div
+              key={i}
+              variants={fadeUp}
+              whileHover={{ scale: 1.05 }}
+              className={`bg-white p-10 rounded-3xl shadow-lg border-t-4 ${item.border}`}
+            >
+              <h3 className={`text-2xl font-bold mb-4 ${item.color}`}>
+                {item.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {item.text}
+              </p>
+            </motion.div>
+          ))}
 
         </div>
-      </section>
+      </motion.section>
 
 
       {/* ================= WHY CHOOSE US ================= */}
-      <section className="py-24 bg-linear-to-r from-indigo-50 to-blue-100">
-
+      <motion.section
+        variants={stagger}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="py-24 bg-linear-to-r from-indigo-50 to-blue-100"
+      >
         <div className="max-w-6xl mx-auto px-6 text-center">
 
-          <div>
-            <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold text-blue-700">
-              Why Choose Our Institute?
-              <span className="text-4xl sm:text-6xl font-serif text-yellow-300">
-                IIFT
-              </span>
-            </h2>
-          </div>
+          <motion.h2 variants={fadeUp}
+            className="text-3xl sm:text-4xl font-bold text-blue-700">
+            Why Choose Our Institute?
+            <span className="text-5xl font-serif text-yellow-300 ml-2">IIFT</span>
+          </motion.h2>
 
-          <div className="mt-12 sm:mt-16 grid md:grid-cols-3 gap-6 sm:gap-10">
-
-            <div className="bg-white p-6 sm:p-10 rounded-3xl shadow-lg hover:-translate-y-3 hover:shadow-2xl transition duration-300">
-              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-blue-600">
-                Expert Faculty
-              </h3>
-              <p className="text-sm sm:text-base text-gray-600">
-                Learn from certified industry professionals with real-world experience.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 sm:p-10 rounded-3xl shadow-lg hover:-translate-y-3 hover:shadow-2xl transition duration-300">
-              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-green-600">
-                Modern Infrastructure
-              </h3>
-              <p className="text-sm sm:text-base text-gray-600">
-                Advanced labs, smart classrooms, and latest technology tools.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 sm:p-10 rounded-3xl shadow-lg hover:-translate-y-3 hover:shadow-2xl transition duration-300">
-              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-indigo-600">
-                Career Support
-              </h3>
-              <p className="text-sm sm:text-base text-gray-600">
-                Dedicated placement cell guiding students toward top companies.
-              </p>
-            </div>
-
-          </div>
+          <motion.div
+            variants={stagger}
+            className="mt-16 grid md:grid-cols-3 gap-10"
+          >
+            {[
+              { title: "Expert Faculty", text: "Learn from certified industry professionals with real-world experience." },
+              { title: "Modern Infrastructure", text: "Advanced labs, smart classrooms, and latest technology tools." },
+              { title: "Career Support", text: "Dedicated placement cell guiding students toward top companies." }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                variants={fadeUp}
+                whileHover={{ y: -15 }}
+                className="bg-white p-8 rounded-3xl shadow-lg"
+              >
+                <h3 className="text-xl font-bold mb-4 text-blue-600">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600">
+                  {item.text}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
 
         </div>
-      </section>
+      </motion.section>
 
 
-      {/* ================= Meet Our Team ================= */}
-      <section className="bg-blue-500 py-12 sm:py-16 px-4">
-
+      {/* ================= TEAM ================= */}
+      <motion.section
+        variants={stagger}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="bg-blue-500 py-16 px-4"
+      >
         <div className="max-w-7xl mx-auto text-center">
 
-          <h2 className="text-3xl sm:text-4xl md:text-4xl font-serif font-bold mb-8 sm:mb-12">
-            Meet Our{" "}
-            <span className="text-white text-4xl sm:text-5xl font-serif">
-              IIFT
-            </span>{" "}
-            Team
-          </h2>
+          <motion.h2 variants={fadeUp}
+            className="text-4xl font-serif font-bold mb-12 text-white">
+            Meet Our IIFT Team
+          </motion.h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-
-            {/* Team Member Card */}
-            <div className="bg-white shadow-lg p-4 sm:p-6 rounded-xl hover:scale-105 transition duration-500">
-              <img className="h-24 w-24 sm:h-35 sm:w-35 bg-gray-200 rounded-full mx-auto mb-3 sm:mb-4" src="Rampal.jpeg" alt="Rampal Soni" />
-              <h3 className="font-semibold text-base sm:text-lg">Rampal Soni</h3>
-              <p className="text-gray-500 text-xs sm:text-sm">Founder & CEO</p>
-            </div>
-
-            <div className="bg-white shadow-lg p-4 sm:p-6 rounded-xl hover:scale-105 transition duration-500">
-              <img className="h-24 w-24 sm:h-35 sm:w-35 bg-gray-200 rounded-full mx-auto mb-3 sm:mb-4" src="Manoj Soni.jpeg" alt="Manoj Soni" />
-              <h3 className="font-semibold text-base sm:text-lg">Manoj Soni</h3>
-              <p className="text-gray-500 text-xs sm:text-sm">Head of Department</p>
-            </div>
-
-            {/* <div className="bg-white shadow-lg p-4 sm:p-6 rounded-xl hover:scale-105 transition duration-500">
-              <img className="h-24 w-24 sm:h-35 sm:w-35 bg-gray-200 rounded-full mx-auto mb-3 sm:mb-4" src="Minder Devi.jpeg" alt="Minder Devi" />
-              <h3 className="font-semibold text-base sm:text-lg">Minder Devi</h3>
-              <p className="text-gray-500 text-xs sm:text-sm">Marketing Head</p>
-            </div> */}
-
-            <div className="bg-white shadow-lg p-4 sm:p-6 rounded-xl hover:scale-105 transition duration-500">
-              <img className="h-24 w-24 sm:h-35 sm:w-35 bg-gray-200 rounded-full mx-auto mb-3 sm:mb-4" src="Vinay Soni.jpeg" alt="Vinay Rojha" />
-              <h3 className="font-semibold text-base sm:text-lg">Vinay Rojha</h3>
-              <p className="text-gray-500 text-xs sm:text-sm">Marketing Head & Managing Director</p>
-            </div>
-
-            <div className="bg-white shadow-lg p-4 sm:p-6 rounded-xl hover:scale-105 transition duration-500">
-              <img className="h-24 w-24 sm:h-35 sm:w-35 bg-gray-200 rounded-full mx-auto mb-3 sm:mb-4" src="Akash Soni.jpeg" alt="Akash Soni" />
-              <h3 className="font-semibold text-base sm:text-lg">Akash Soni</h3>
-              <p className="text-gray-500 text-xs sm:text-sm">Technical Head</p>
-            </div>
-
-            <div className="bg-white shadow-lg p-4 sm:p-6 rounded-xl hover:scale-105 transition duration-500">
-              <img className="h-24 w-24 sm:h-35 sm:w-35 bg-gray-200 rounded-full mx-auto mb-3 sm:mb-4" src="Anjali.jpeg" alt="Anjali Singh" />
-              <h3 className="font-semibold text-base sm:text-lg">Anjali Singh</h3>
-              <p className="text-gray-500 text-xs sm:text-sm">Career & Placement Coordinator</p>
-            </div>
-
-          </div>
+          <motion.div
+            variants={stagger}
+            className="grid sm:grid-cols-2 md:grid-cols-3 gap-8"
+          >
+            {[
+              { name: "Rampal Soni", role: "Founder & CEO", img: "Rampal.jpeg" },
+              { name: "Manoj Soni", role: "Head of Department", img: "Manoj Soni.jpeg" },
+              { name: "Vinay Rojha", role: "Marketing Head & Managing Director", img: "Vinay Soni.jpeg" },
+              { name: "Akash Soni", role: "Technical Head", img: "Akash Soni.jpeg" },
+              { name: "Anjali Singh", role: "Career & Placement Coordinator", img: "Anjali.jpeg" }
+            ].map((member, i) => (
+              <motion.div
+                key={i}
+                variants={fadeUp}
+                whileHover={{ scale: 1.08 }}
+                className="bg-white shadow-lg p-6 rounded-xl"
+              >
+                <img
+                  className="h-30 w-30 rounded-full mx-auto"
+                  src={member.img}
+                  alt={member.name}
+                />
+                <h3 className="font-semibold text-lg">{member.name}</h3>
+                <p className="text-gray-500 text-sm">{member.role}</p>
+              </motion.div>
+            ))}
+          </motion.div>
 
         </div>
-      </section>
+      </motion.section>
 
 
-      {/* ================= CALL TO ACTION ================= */}
-      <section className="py-20 sm:py-28 bg-linear-to-r from-blue-800 to-indigo-900 text-center text-white px-6">
-
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
+      {/* ================= CTA ================= */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="py-28 bg-linear-to-r from-blue-800 to-indigo-900 text-center text-white px-6"
+      >
+        <motion.h2
+          initial={{ y: 50 }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-4xl md:text-5xl font-bold"
+        >
           Start Your Future Today
-        </h2>
+        </motion.h2>
 
-        <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg max-w-2xl mx-auto text-gray-200">
+        <p className="mt-6 text-lg max-w-2xl mx-auto text-gray-200">
           Take the first step toward a successful career in technology with
-          International Institute of Futurisitc Technology.
+          International Institute of Futuristic Technology.
         </p>
+      </motion.section>
 
-      </section>
 
-
-      {/* ================= FOOTER BAR ================= */}
-      <div className="bg-blue-950 flex justify-center items-center mt-4 h-10 md:h-12 px-2 md:px-0">
-        <p className="text-white text-xs sm:text-sm md:text-sm text-center">
+      {/* ================= FOOTER ================= */}
+      <div className="bg-blue-950 flex justify-center items-center h-12">
+        <p className="text-white text-sm text-center">
           © 2026 IIFT | All Rights Reserved | Designed by Web Developer
         </p>
       </div>
