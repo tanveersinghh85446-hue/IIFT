@@ -28,6 +28,29 @@ export default function Hero() {
     students: 0
   });
 
+  const placementLogos = [
+    "Google.png",
+    "Microsoft.png",
+    "Aws.png",
+    "Ibm.png",
+    "Deloitte.png",
+    "Accenture.png",
+    "tcs.png",
+    "Infosys.png",
+    "Wipro.png",
+    "Capgemini.png",
+    "Hcl.png",
+    "Oracle.png",
+    "Sap.png",
+    "Adobe.png",
+    "Cisco.png",
+    "Intel.png",
+    "Cognizant.png",
+    "Salesforce.png",
+    "Tm.png",
+    "Nvidia.png",
+  ];
+
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
@@ -77,10 +100,6 @@ export default function Hero() {
         {/* Content */}
         <div className="relative z-10 px-6 max-w-4xl text-white">
 
-          {/* Small Top Heading */}
-          {/* <p className="uppercase tracking-widest text-sm md:text-base text-blue-400 mb-4">
-            World’s Best Institute
-          </p> */}
           <div>
             <motion.h2
               initial={{ x: -100, opacity: 0 }}
@@ -120,9 +139,16 @@ export default function Hero() {
           {/* Buttons */}
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
 
-            <Link to="/course">
+            <Link to="course">
               <button className="px-5 py-2 sm:px-8 sm:py-3 bg-blue-600 rounded-lg font-semibold hover:bg-white hover:text-black transition duration-300 w-full sm:w-auto">
                 Explore Courses
+              </button>
+            </Link>
+
+            <Link to="Apply">
+              <button className="px-5 py-2 sm:px-8 sm:py-3 border-2 border-white rounded-lg font-semibold hover:bg-white hover:text-black transition duration-300 w-full sm:w-auto"
+              >
+                Apply Now
               </button>
             </Link>
 
@@ -133,9 +159,9 @@ export default function Hero() {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="px-5 py-2 sm:px-8 sm:py-3 border-2 border-white rounded-lg font-semibold hover:bg-white hover:text-black transition duration-300 w-full sm:w-auto"
+
             >
-              Apply Now
+
             </motion.button>
           </div>
         </div>
@@ -241,6 +267,47 @@ export default function Hero() {
             </div>
           </div>
         </div>
+
+
+        {/* ===== Placement===== */}
+        <section className="py-20 bg-blue-600 px-6">
+
+          <div className="max-w-6xl mx-auto text-center mb-14">
+            <h2 className="text-4xl md:text-5xl font-bold text-white">
+              Our Hiring Partners
+            </h2>
+            <p className="text-blue-100 mt-4 text-lg">
+              Students Placed In Top MNC Companies
+            </p>
+          </div>
+
+          <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
+
+            {placementLogos.map((logo, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{
+                  delay: index * 0.07,
+                  duration: 0.5,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.1 }}
+                className="bg-black rounded-2xl p-6 flex items-center justify-center shadow-lg hover:shadow-2xl transition duration-300"
+              >
+                <img
+                  src={`/${logo}`}
+                  alt="company logo"
+                  className="h-12 md:h-16 object-contain opacity-80 hover:opacity-100 transition duration-300"
+                />
+              </motion.div>
+            ))}
+
+          </div>
+
+        </section>
 
         <div className="overflow-hidden py-10 bg-white">
           <motion.div

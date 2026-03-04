@@ -8,6 +8,7 @@ import { GiTakeMyMoney } from "react-icons/gi";
 import { AiOutlineStock } from "react-icons/ai";
 import { GrResources } from "react-icons/gr";
 import { IoRocketOutline } from "react-icons/io5";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 export default function Course() {
@@ -1139,39 +1140,72 @@ export default function Course() {
         </div>
       </div>
 
-      <section className="py-24 bg-blue-600 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-12">
+      <section className="relative py-24 bg-linear-to-r from-blue-700 via-indigo-700 to-purple-700 px-6 overflow-hidden">
+
+        {/* Background Blur Effects */}
+        <div className="absolute top-0 left-0 w-72 h-72 bg-white/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-pink-400/20 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
+
+        <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-12">
 
           {/* Left Content */}
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
+          <motion.div
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white leading-tight">
               Ready To Upgrade Your Career?
             </h2>
 
-            <p className="mt-6 text-lg text-white">
+            <p className="mt-6 text-lg text-white/90 leading-relaxed">
               Join our professional programs and gain practical skills that industries demand.
             </p>
 
-            <p className="mt-4 text-sm text-white">
-              Certified Programs | Industry Mentors | Job Assistance
+            <p className="mt-4 text-sm text-white/80 tracking-wide">
+              Certified Programs • Industry Mentors • Job Assistance
             </p>
 
-            <Link
-              to="/Apply"
-              className="inline-block mt-8 px-4 py-2 sm:px-8 sm:py-3 rounded-full text-sm sm:text-lg font-semibold bg-white shadow-lg"
+            <motion.div
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
             >
-              Enroll Now
-            </Link>
-          </div>
+              <Link
+                to="/Apply"
+                className="inline-block mt-8 px-8 py-3 rounded-full text-lg font-semibold bg-white text-blue-700 shadow-xl hover:shadow-2xl transition-all duration-300"
+              >
+                Enroll Now
+              </Link>
+            </motion.div>
+          </motion.div>
 
           {/* Right Image */}
-          <div>
-            <img
+          <motion.div
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <motion.img
               src="/Study.jpeg"
               alt="Students studying"
-              className="rounded-2xl shadow-2xl w-full object-cover"
+              className="rounded-3xl shadow-2xl w-full object-cover"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.4 }}
             />
-          </div>
+
+            {/* Floating Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="absolute -bottom-6 -left-6 bg-white text-blue-700 px-6 py-3 rounded-2xl shadow-xl font-semibold"
+            >
+              100% Practical Training
+            </motion.div>
+          </motion.div>
 
         </div>
       </section>

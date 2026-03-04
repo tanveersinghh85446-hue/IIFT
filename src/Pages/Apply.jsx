@@ -1,8 +1,169 @@
+// import React from "react";
+// import { motion } from "framer-motion";
+// import { CgPlayButtonR } from "react-icons/cg";
+
+// export default function Apply() {
+
+//   const logos = [
+//     "DATA ANALYSIS.png",
+//     "FINANCE.png",
+//     "DATA SCIENCE.png",
+//     "DIPLOMA IHRM.png",
+//     "WEB DEVELOPMENT.png",
+//     "EATHICAL HACKING.png",
+//     "DIGITAL MARKETING.png",
+//     "DIPLOMA IID.png",
+//   ];
+
+//   const containerVariant = {
+//     hidden: {},
+//     show: {
+//       transition: {
+//         staggerChildren: 0.15,
+//       },
+//     },
+//   };
+
+//   const fadeUp = {
+//     hidden: { opacity: 0, y: 40 },
+//     show: { opacity: 1, y: 0, transition: { duration: 0.7 } },
+//   };
+
+//   return (
+//     <div className="relative overflow-hidden bg-linear-to-b from-white via-blue-50 to-indigo-100">
+
+//       {/* Background color*/}
+//       <div className="absolute -top-32 -left-32 w-96 h-96 bg-blue-400/20 blur-3xl rounded-full"></div>
+//       <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-purple-400/20 blur-3xl rounded-full"></div>
+
+//       {/* Animated Logos Section */}
+//       <div className="overflow-hidden py-16 relative">
+//         <motion.div
+//           className="flex gap-20"
+//           animate={{ x: ["0%", "-100%"] }}
+//           transition={{
+//             repeat: Infinity,
+//             duration: 20,
+//             ease: "linear",
+//           }}
+//         >
+//           {[...logos, ...logos].map((logo, i) => (
+//             <motion.img
+//               key={i}
+//               src={logo}
+//               alt="course logo"
+//               whileHover={{ scale: 1.1 }}
+//               className="h-40 md:h-48 w-auto object-contain opacity-70 hover:opacity-100 transition duration-300"
+//             />
+//           ))}
+//         </motion.div>
+//       </div>
+
+//       {/* CTA Section */}
+//       <motion.div
+//         variants={containerVariant}
+//         initial="hidden"
+//         whileInView="show"
+//         viewport={{ once: true }}
+//         className="flex flex-col justify-center items-center text-center px-4 py-20 relative z-10"
+//       >
+
+//         <motion.h2
+//           variants={fadeUp}
+//           className="text-3xl md:text-5xl font-extrabold text-gray-800 mb-6"
+//         >
+//           Ready to Start Your Tech Journey?
+//         </motion.h2>
+
+//         <motion.p
+//           variants={fadeUp}
+//           className="text-gray-600 max-w-2xl mb-10 text-lg"
+//         >
+//           Join IIFT and build industry-ready skills that top companies are looking for.
+//         </motion.p>
+
+//         <motion.a
+//           variants={fadeUp}
+//           href="https://docs.google.com/forms/d/19Zf-RLRlerLWgnbczZBoAUfuhdVV20xs-WngXYC4rbw/edit"
+//           target="_blank"
+//           rel="noopener noreferrer"
+//         >
+//           <motion.button
+//             whileHover={{
+//               scale: 1.08,
+//               boxShadow: "0px 0px 25px rgba(37,99,235,0.6)",
+//             }}
+//             whileTap={{ scale: 0.95 }}
+//             className="flex items-center gap-3 px-10 py-4 bg-linear-to-r from-blue-600 to-indigo-600 text-white text-lg font-semibold rounded-full shadow-xl"
+//           >
+//             <CgPlayButtonR size={24} />
+//             Apply Now
+//           </motion.button>
+//         </motion.a>
+
+//       </motion.div>
+
+//       {/* ================= PROGRAMS SECTION ================= */}
+//       <section className="py-24 px-6 max-w-6xl mx-auto text-center relative z-10">
+
+//         <motion.h2
+//           initial={{ opacity: 0, y: 30 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.7 }}
+//           viewport={{ once: true }}
+//           className="text-4xl font-extrabold text-indigo-700"
+//         >
+//           Our Flagship Programs
+//         </motion.h2>
+
+//         <motion.div
+//           variants={containerVariant}
+//           initial="hidden"
+//           whileInView="show"
+//           viewport={{ once: true }}
+//           className="mt-16 grid md:grid-cols-4 gap-8"
+//         >
+
+//           {["Web Development", "App Development", "AI & Robotics", "Cyber Security"].map((program, index) => (
+//             <motion.div
+//               key={index}
+//               variants={fadeUp}
+//               whileHover={{
+//                 scale: 1.08,
+//                 rotateY: 5,
+//               }}
+//               className="bg-linear-to-r from-blue-600 to-indigo-600 text-white p-8 rounded-3xl shadow-2xl cursor-pointer"
+//             >
+//               <h3 className="text-xl font-semibold">{program}</h3>
+//             </motion.div>
+//           ))}
+
+//         </motion.div>
+
+//       </section>
+
+//       {/* Footer */}
+//       <div className="bg-blue-950 flex justify-center items-center h-12">
+//         <p className="text-white text-sm text-center">
+//           © 2026 IIFT | All Rights Reserved | Designed by Web Developer
+//         </p>
+//       </div>
+
+//     </div>
+//   );
+// }
+
+
+
+
+
+
 import React from "react";
 import { motion } from "framer-motion";
 import { CgPlayButtonR } from "react-icons/cg";
 
 export default function Apply() {
+
   const logos = [
     "DATA ANALYSIS.png",
     "FINANCE.png",
@@ -14,126 +175,158 @@ export default function Apply() {
     "DIPLOMA IID.png",
   ];
 
-  return (
-    <div className="bg-linear-to-b from-white to-blue-50">
+  const programs = [
+    "Web Development",
+    "App Development",
+    "AI & Robotics",
+    "Cyber Security"
+  ];
 
-      {/* 🔹 Moving Logos Section */}
-      <div className="overflow-hidden py-14">
+  const containerVariant = {
+    hidden: {},
+    show: {
+      transition: { staggerChildren: 0.15 }
+    }
+  };
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.7 } }
+  };
+
+  return (
+    <div className="relative overflow-hidden bg-linear-to-b from-white via-blue-50 to-indigo-100">
+
+      {/* Animated Background Glow */}
+      <div className="absolute -top-32 -left-32 w-96 h-96 bg-blue-400/20 blur-3xl rounded-full animate-pulse"></div>
+      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-purple-400/20 blur-3xl rounded-full animate-pulse"></div>
+
+      {/* ================= LOGO MARQUEE ================= */}
+      <div className="overflow-hidden py-16 relative">
         <motion.div
-          className="flex gap-20"
+          className="flex gap-20 whitespace-nowrap"
           animate={{ x: ["0%", "-100%"] }}
-          transition={{
-            repeat: Infinity,
-            duration: 18,
-            ease: "linear",
-          }}
+          transition={{ repeat: Infinity, duration: 22, ease: "linear" }}
         >
           {[...logos, ...logos].map((logo, i) => (
-            <img
+            <motion.img
               key={i}
               src={logo}
+              loading="lazy"
               alt="course logo"
-              className="h-40 md:h-48 w-auto object-contain opacity-80 hover:opacity-100 transition duration-300"
+              whileHover={{ scale: 1.1 }}
+              className="h-32 md:h-44 w-auto object-contain opacity-70 hover:opacity-100 transition duration-300"
             />
           ))}
         </motion.div>
       </div>
 
-      {/* CTA Section */}
-      <div className="flex flex-col justify-center items-center text-center px-4 py-16">
+      {/* ================= HERO CTA ================= */}
+      <motion.section
+        variants={containerVariant}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="flex flex-col justify-center items-center text-center px-4 py-20 relative z-10"
+      >
 
-        <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+        <motion.h2
+          variants={fadeUp}
+          className="text-3xl md:text-5xl font-extrabold text-gray-800 mb-6"
+        >
           Ready to Start Your Tech Journey?
-        </h2>
+        </motion.h2>
 
-        <p className="text-gray-600 max-w-2xl mb-8 text-lg">
+        <motion.p
+          variants={fadeUp}
+          className="text-gray-600 max-w-2xl mb-10 text-lg"
+        >
           Join IIFT and build industry-ready skills that top companies are looking for.
-        </p>
+        </motion.p>
 
-        <a
+        <motion.a
+          variants={fadeUp}
           href="https://docs.google.com/forms/d/19Zf-RLRlerLWgnbczZBoAUfuhdVV20xs-WngXYC4rbw/edit"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button className="flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold rounded-xl shadow-lg hover:scale-105 transition duration-300">
-            <CgPlayButtonR size={22} />
+          <motion.button
+            whileHover={{
+              scale: 1.08,
+              boxShadow: "0px 0px 30px rgba(37,99,235,0.7)"
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center gap-3 px-10 py-4 bg-linear-to-r from-blue-600 to-indigo-600 text-white text-lg font-semibold rounded-full shadow-xl"
+          >
+            <CgPlayButtonR size={24} />
             Apply Now
-          </button>
-        </a>
+          </motion.button>
+        </motion.a>
 
-      </div>
+      </motion.section>
 
-      {/* <section className="bg-blue-500 py-16 px-4">
-        <div className="max-w-7xl mx-auto text-center">
-
-          <h2 className="text-4xl font-serif font-bold mb-12">Meet Our Team</h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-
-            <div className="bg-white shadow-lg p-6 rounded-xl hover:scale-105 transition duration-500">
-              <img className="h-35 w-35 bg-gray-200 rounded-full mx-auto mb-4" src="Rampal.jpeg" alt="img" />
-              <h3 className="font-semibold text-lg">Rampal Soni</h3>
-              <p className="text-gray-500">Founder & CEO</p>
-            </div>
-
-            <div className="bg-white shadow-lg p-6 rounded-xl hover:scale-105 transition duration-500">
-              <img className="h-35 w-35 bg-gray-200 rounded-full mx-auto mb-4" src="Manoj Soni.jpeg" alt="img" />
-              <h3 className="font-semibold text-lg">Manoj Soni</h3>
-              <p className="text-gray-500">Head of Department</p>
-            </div>
-
-            <div className="bg-white shadow-lg p-6 rounded-xl hover:scale-105 transition duration-500">
-              <img className="h-35 w-35 bg-gray-200 rounded-full mx-auto mb-4" src="Minder Devi.jpeg" alt="img" />
-              <h3 className="font-semibold text-lg">Minder Devi</h3>
-              <p className="text-gray-500">Marketing Head</p>
-            </div>
-
-            <div className="bg-white shadow-lg p-6 rounded-xl hover:scale-105 transition duration-500">
-              <img className="h-35 w-35 bg-gray-200 rounded-full mx-auto mb-4" src="Vinay Soni.jpeg" alt="img" />
-              <h3 className="font-semibold text-lg">Vinay Rojha</h3>
-              <p className="text-gray-500">Career Counselor</p>
-            </div>
-
-            <div className="bg-white shadow-lg p-6 rounded-xl hover:scale-105 transition duration-500">
-              <img className="h-35 w-35 bg-gray-200 rounded-full mx-auto mb-4" src="Akash Soni.jpeg" alt="img" />
-              <h3 className="font-semibold text-lg">Akash Soni</h3>
-              <p className="text-gray-500">Teachnical Head</p>
-            </div>
-
-            <div className="bg-white shadow-lg p-6 rounded-xl hover:scale-105 transition duration-500">
-              <img className="h-35 w-35 bg-gray-200 rounded-full mx-auto mb-4" src="Anjali.jpeg" alt="img" />
-              <h3 className="font-semibold text-lg">Anjali Singh</h3>
-              <p className="text-gray-500">Placement Codinator</p>
-            </div>
-
-          </div>
-
+      {/* ================= STATS SECTION ================= */}
+      <section className="py-20 bg-white/40 backdrop-blur-xl">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-3 text-center gap-10 px-6">
+          {[
+            { number: "1000+", label: "Students Enrolled" },
+            { number: "50+", label: "Industry Mentors" },
+            { number: "100%", label: "Placement Support" }
+          ].map((stat, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.2 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-4xl font-bold text-indigo-700">{stat.number}</h3>
+              <p className="text-gray-600 mt-2">{stat.label}</p>
+            </motion.div>
+          ))}
         </div>
-      </section> */}
-      {/* ================= PROGRAMS SECTION ================= */}
+      </section>
+
+      {/* ================= PROGRAMS ================= */}
       <section className="py-24 px-6 max-w-6xl mx-auto text-center">
 
-        <h2 className="text-4xl font-bold text-green-600">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="text-4xl font-extrabold text-indigo-700"
+        >
           Our Flagship Programs
-        </h2>
+        </motion.h2>
 
-        <div className="mt-16 grid md:grid-cols-4 gap-8">
-
-          {["Web Development", "App Development", "AI & Robotics", "Cyber Security"].map((program, index) => (
-            <div
+        <motion.div
+          variants={containerVariant}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="mt-16 grid md:grid-cols-4 gap-8"
+        >
+          {programs.map((program, index) => (
+            <motion.div
               key={index}
-              className="bg-linear-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white p-8 rounded-2xl shadow-lg hover:scale-105 transition duration-300"
+              variants={fadeUp}
+              whileHover={{
+                scale: 1.08,
+                rotateY: 5
+              }}
+              className="bg-white/30 backdrop-blur-xl border border-white/40 text-indigo-900 p-8 rounded-3xl shadow-2xl cursor-pointer"
             >
               <h3 className="text-xl font-semibold">{program}</h3>
-            </div>
+            </motion.div>
           ))}
-
-        </div>
+        </motion.div>
 
       </section>
 
-      <div className="bg-blue-950 flex justify-center items-center mt-4 h-10 md:h-12 px-2 md:px-0">
-        <p className="text-white text-xs sm:text-sm md:text-sm text-center">
+      {/* ================= FOOTER ================= */}
+      <div className="bg-blue-950 flex justify-center items-center h-12">
+        <p className="text-white text-sm text-center">
           © 2026 IIFT | All Rights Reserved | Designed by Web Developer
         </p>
       </div>
