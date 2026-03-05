@@ -6,13 +6,12 @@ function Navbar() {
   const location = useLocation();
   return (
     <nav className="bg-blue-600 text-white shadow-md w-full">
-      <div className="flex flex-col md:flex-row items-center justify-between px-4 md:px-8 py-4 gap-4">
-
+      <div className="flex flex-col md:flex-row items-center justify-between px-4 md:px-8 py-4 md:py-5 gap-4">
         {/* Logo */}
         <div className="flex items-center gap-3">
           <img
-            className="h-14 sm:h-16 md:h-20 w-auto"
-            src="LOGO2.png"
+            className="max-h-12 w-auto object-contain"
+            src="Logo.png"
             alt="Logo"
           />
         </div>

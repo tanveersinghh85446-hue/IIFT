@@ -72,7 +72,7 @@ export default function Hero() {
 
 
   const logos = [
-    "Google.png", "Alcoa.png", "Accenture.png", "Genpact.png", "GoldManSachs.png",
+    "Google.png", "Alcoa.png", "accenture.webp", "Genpact.png", "GoldManSachs.png",
     "Hcl.png", "Ibm.png", "Microsoft.png", "NielsenIQ.png", "Ramboll.png",
     "Wipro.png", "Wsp.png"
   ];
@@ -145,7 +145,7 @@ export default function Hero() {
               </button>
             </Link>
 
-            <Link to="Apply">
+            <Link to="apply">
               <button className="px-5 py-2 sm:px-8 sm:py-3 border-2 border-white rounded-lg font-semibold hover:bg-white hover:text-black transition duration-300 w-full sm:w-auto"
               >
                 Apply Now
@@ -334,7 +334,11 @@ export default function Hero() {
         <div className="bg-blue-600 flex flex-col lg:flex-row justify-between items-start px-6 md:px-12 lg:px-32 py-12 gap-10 text-white">
 
           <div className="max-w-md">
-            <img className="h-20 md:h-28 mb-4" src="LOGO2.png" alt="logo" />
+            <img
+              className="max-h-12 w-auto object-contain"
+              src="Logo.png"
+              alt="Logo"
+            />
             <p className="text-xl">
               International Institute of Futurisitc Technology (IIFT) prepares students with practical skills and advanced knowledge.
             </p>
@@ -370,13 +374,16 @@ export default function Hero() {
                 <a href="https://x.com/IIFT367437">
                   <button className="bg-white transition-transform duration-300 hover:scale-150 h-9 w-9 md:h-12 md:w-12 rounded-full items-center flex justify-center">
                     <FaXTwitter className="text-black text-lg md:text-2xl" />
-                  </button></a>
+                  </button>
+                </a>
 
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=iift.education01@gmail.com&su=Inquiry&body=Hello%20IIFT%20Team"
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=iioft.education@gmail.com&su=Inquiry&body=Hello%20IIOFT%20Team"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white transition-transform duration-300 hover:scale-150 h-9 w-9 md:h-12 md:w-12 rounded-full flex items-center justify-center">
-                  <IoIosMailUnread className="text-yellow-300 text-lg md:text-2xl" />
+                  className="bg-white transition-transform duration-300 hover:scale-110 h-10 w-10 md:h-12 md:w-12 rounded-full flex items-center justify-center"
+                >
+                  <IoIosMailUnread className="text-yellow-500 text-lg md:text-2xl" />
                 </a>
 
                 <a href="https://wa.me/919560307098"
@@ -442,21 +449,25 @@ export default function Hero() {
             </h3>
             <div className="space-y-2 text-base md:text-base">
               <p className="flex items-center gap-2 cursor-pointer"><FaPhoneAlt /> +91 9217661339 +91 9560307098</p>
-              <p className="flex items-center gap-2 cursor-pointer"><FaEnvelope /> iift.education01@gmail.com</p>
+              <p className="flex items-center gap-2 cursor-pointer"><FaEnvelope />iioft.education@gmail.com</p>
               <p className="flex items-center gap-2 cursor-pointer"><FaMapMarkerAlt /> India, Dwarka</p>
             </div>
 
             {/* Apply Button */}
             <motion.button
+              className="mt-8"
               animate={{ scale: [1, 1.05, 1] }}
               transition={{
                 duration: 2,
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="px-5 py-2 sm:px-8 sm:py-3 border-2 border-white rounded-lg font-semibold hover:bg-white hover:text-black transition duration-300 w-full sm:w-auto"
             >
-              Apply Now
+              <Link to="apply">
+                <button className="px-5 py-2 sm:px-8 sm:py-3 border-2 border-white rounded-lg font-semibold hover:bg-white hover:text-black transition duration-300 w-full sm:w-auto">
+                  Apply Now
+                </button>
+              </Link>
             </motion.button>
           </div>
         </div>
