@@ -140,13 +140,13 @@ export default function Hero() {
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
 
             <Link to="course">
-              <button className="px-5 py-2 sm:px-8 sm:py-3 bg-blue-600 rounded-lg font-semibold hover:bg-white hover:text-black transition duration-300 w-full sm:w-auto">
+              <button className="px-5 py-2 sm:px-8 sm:py-3 bg-blue-600 rounded-lg font-semibold hover:bg-white hover:text-black transition duration-300 w-full sm:w-auto  animate-bounce">
                 Explore Courses
               </button>
             </Link>
 
             <Link to="apply">
-              <button className="px-5 py-2 sm:px-8 sm:py-3 border-2 border-white rounded-lg font-semibold hover:bg-white hover:text-black transition duration-300 w-full sm:w-auto"
+              <button className="px-5 py-2 sm:px-8 sm:py-3 border-2 border-white rounded-lg font-semibold hover:bg-white hover:text-black transition duration-300 w-full sm:w-auto  animate-bounce"
               >
                 Apply Now
               </button>

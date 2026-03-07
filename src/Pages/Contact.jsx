@@ -123,28 +123,28 @@ export default function Contact() {
             <div className='max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8'>
 
                 <div className='bg-white rounded-2xl shadow-lg p-4 sm:p-6 text-center hover:shadow-2xl transition'>
-                    <FaHourglassHalf className='text-2xl sm:text-3xl mx-auto text-blue-600 mb-3 sm:mb-4' />
+                    <FaHourglassHalf className='text-2xl sm:text-3xl mx-auto text-blue-600 mb-3 sm:mb-4  animate-pulse' />
                     <h3 className='text-base sm:text-xl font-semibold mb-1 sm:mb-2'>Office Hours</h3>
                     <p className='text-sm sm:text-base'>Monday – Saturday</p>
                     <p className='text-sm sm:text-base'>9:00 AM – 9:00 PM</p>
                 </div>
 
                 <div className='bg-white rounded-2xl shadow-lg p-4 sm:p-6 text-center hover:shadow-2xl transition'>
-                    <CiLocationOn className='text-2xl sm:text-3xl mx-auto text-blue-600 mb-3 sm:mb-4' />
+                    <CiLocationOn className='text-2xl sm:text-3xl mx-auto text-blue-600 mb-3 sm:mb-4  animate-pulse' />
                     <h3 className='text-base sm:text-xl font-semibold mb-1 sm:mb-2'>Location</h3>
                     <p className='text-sm sm:text-base'>IIFT Institute</p>
                     <p className='text-sm sm:text-base'>Delhi, Dwarka (India)</p>
                 </div>
 
                 <div className='bg-white rounded-2xl shadow-lg p-4 sm:p-6 text-center hover:shadow-2xl transition'>
-                    <CiPhone className='text-2xl sm:text-3xl mx-auto text-blue-600 mb-3 sm:mb-4' />
+                    <CiPhone className='text-2xl sm:text-3xl mx-auto text-blue-600 mb-3 sm:mb-4  animate-pulse' />
                     <h3 className='text-base sm:text-xl font-semibold mb-1 sm:mb-2'>Phone</h3>
                     <p className='text-sm sm:text-base'>+91 9217661339</p>
                     <p className='text-sm sm:text-base'>+91 9560307098</p>
                 </div>
 
                 <div className='bg-white rounded-2xl shadow-lg p-4 sm:p-6 text-center hover:shadow-2xl transition'>
-                    <MdOutlineMarkEmailRead className='text-2xl sm:text-3xl mx-auto text-blue-600 mb-3 sm:mb-4' />
+                    <MdOutlineMarkEmailRead className='text-2xl sm:text-3xl mx-auto text-blue-600 mb-3 sm:mb-4 animate-pulse' />
                     <h3 className='text-base sm:text-xl font-semibold mb-1 sm:mb-2'>Email</h3>
                     <p className='text-sm sm:text-base'>iift.education01@gmail.com</p>
                 </div>

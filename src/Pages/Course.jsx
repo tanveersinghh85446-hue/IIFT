@@ -44,7 +44,7 @@ export default function Course() {
 
               <summary className="cursor-pointer font-bold text-base sm:text-lg md:text-xl lg:text-2xl text-center flex items-center justify-center gap-3">
                 <span>
-                  <TbDeviceDesktopCode className='text-blue-600 text-3xl sm:text-4xl transition-transform duration-300 hover:scale-150' />
+                  <TbDeviceDesktopCode className='text-blue-600 text-3xl sm:text-4xl transition-transform duration-300 hover:scale-150 animate-bounce' />
                 </span>
                 WEB DEVELOPMENT FULL SYLLABUS
               </summary>
@@ -164,7 +164,7 @@ export default function Course() {
 
               <summary className="cursor-pointer font-bold text-base sm:text-lg md:text-xl lg:text-2xl text-center flex items-center justify-center gap-3">
                 <span>
-                  <FaDatabase className='text-3xl sm:text-4xl text-green-600 transition-transform duration-300 hover:scale-150' />
+                  <FaDatabase className='text-3xl sm:text-4xl text-green-600 transition-transform duration-300 hover:scale-150 animate-bounce' />
                 </span>
                 DATA SCIENCE – FULL COURSE SYLLABUS
               </summary>
@@ -317,7 +317,7 @@ export default function Course() {
 
               <summary className="cursor-pointer font-bold text-base sm:text-lg md:text-xl lg:text-2xl text-center flex items-center justify-center gap-3">
                 <span className="text-emerald-600">
-                  <MdDataExploration className='text-3xl sm:text-4xl text-violet-600 transition-transform duration-300 hover:scale-150' />
+                  <MdDataExploration className='text-3xl sm:text-4xl text-violet-600 transition-transform duration-300 hover:scale-150 animate-bounce' />
                 </span>
                 DATA ANALYTICS – FULL COURSE SYLLABUS
               </summary>
@@ -458,7 +458,7 @@ export default function Course() {
 
               <summary className="cursor-pointer font-bold text-base sm:text-lg md:text-xl lg:text-2xl text-center flex items-center justify-center gap-3">
                 <span className="text-emerald-400">
-                  <TbBrandHackerrank className='text-3xl sm:text-4xl text-red-600 transition-transform duration-300 hover:scale-150' />
+                  <TbBrandHackerrank className='text-3xl sm:text-4xl text-red-600 transition-transform duration-300 hover:scale-150 animate-bounce' />
                 </span>
                 ETHICAL HACKING – FULL COURSE SYLLABUS
               </summary>
@@ -608,7 +608,7 @@ export default function Course() {
 
               <summary className="cursor-pointer font-bold text-base sm:text-lg md:text-xl lg:text-2xl text-center flex items-center justify-center gap-3">
                 <span className="text-purple-600">
-                  <AiOutlineStock className='text-3xl sm:text-4xl transition-transform duration-300 hover:scale-125' />
+                  <AiOutlineStock className='text-3xl sm:text-4xl transition-transform duration-300 hover:scale-125 animate-bounce' />
                 </span>
                 DIGITAL MARKETING – FULL COURSE SYLLABUS
               </summary>
@@ -743,7 +743,7 @@ export default function Course() {
 
               <summary className="cursor-pointer font-bold text-base sm:text-lg md:text-xl lg:text-2xl text-center flex items-center justify-center gap-3">
                 <span className="text-amber-600">
-                  <GiDiploma className='text-3xl sm:text-4xl text-yellow-300 transition-transform duration-300 hover:scale-125' />
+                  <GiDiploma className='text-3xl sm:text-4xl text-yellow-300 transition-transform duration-300 hover:scale-125 animate-bounce' />
                 </span>
                 DIPLOMA IN INTERIOR DESIGN
               </summary>
@@ -877,7 +877,7 @@ export default function Course() {
 
               <summary className="cursor-pointer font-bold text-base sm:text-lg md:text-xl lg:text-2xl text-center flex items-center justify-center gap-3">
                 <span className="text-blue-600">
-                  <GiTakeMyMoney className='text-3xl sm:text-4xl text-green-400 transition-transform duration-300 hover:scale-125' />
+                  <GiTakeMyMoney className='text-3xl sm:text-4xl text-green-400 transition-transform duration-300 hover:scale-125 animate-bounce' />
                 </span>
                 ADVANCED FINANCE & ACCOUNTING
               </summary>
@@ -996,7 +996,7 @@ export default function Course() {
 
               <summary className="cursor-pointer font-bold text-base sm:text-lg md:text-xl lg:text-2xl text-center flex items-center justify-center gap-3">
                 <span className='flex gap-2'>
-                  <GrResources className='text-3xl sm:text-4xl text-pink-500 transition-transform duration-300 hover:scale-125' />
+                  <GrResources className='text-3xl sm:text-4xl text-pink-500 transition-transform duration-300 hover:scale-125 animate-bounce' />
                   DIPLOMA IN HUMAN RESOURCE MANAGEMENT
                 </span>
               </summary>
