@@ -34,7 +34,7 @@ export default function Kmore() {
           className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight"
         >
           Shaping The Future With{" "}
-          <span className="text-yellow-300 font-serif">IIFT</span>
+          <span className="text-yellow-300 font-serif">IIOFT</span>
         </motion.h1>
 
         <motion.p
@@ -109,7 +109,7 @@ export default function Kmore() {
           <motion.h2 variants={fadeUp}
             className="text-3xl sm:text-4xl font-bold text-blue-700">
             Why Choose Our Institute?
-            <span className="text-5xl font-serif text-yellow-300 ml-2">IIFT</span>
+            <span className="text-5xl font-serif text-yellow-300 ml-2">IIOFT</span>
           </motion.h2>
 
           <motion.div
@@ -153,7 +153,7 @@ export default function Kmore() {
 
           <motion.h2 variants={fadeUp}
             className="text-4xl font-serif font-bold mb-12 text-white">
-            Meet Our IIFT Team
+            Meet Our IIOFT Team
           </motion.h2>
 
           <motion.div
@@ -216,7 +216,7 @@ export default function Kmore() {
       {/* ================= FOOTER ================= */}
       <div className="bg-blue-950 flex justify-center items-center h-12">
         <p className="text-white text-sm text-center">
-          © 2026 IIFT | All Rights Reserved | Designed by Web Developer
+          © 2026 IIOFT | All Rights Reserved | Designed by Web Developer
         </p>
       </div>
 

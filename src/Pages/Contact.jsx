@@ -15,7 +15,7 @@ export default function Contact() {
                     Contact Us
                 </h1>
                 <p className='text-sm sm:text-base md:text-xl mt-2 sm:mt-4 max-w-xs sm:max-w-md md:max-w-3xl text-gray-600'>
-                    We’d love to hear from you! Get in touch with IIFT for admissions, courses, or any queries
+                    We’d love to hear from you! Get in touch with IIOFT for admissions, courses, or any queries
                 </p>
             </div>
 
@@ -41,25 +41,25 @@ export default function Contact() {
                         {[
                             {
                                 title: "Mode of Learning",
-                                subtitle: "Explore flexible learning options available at IIFT.",
+                                subtitle: "Explore flexible learning options available at IIOFT.",
                                 items: [
-                                    ["Are classes online or offline?", "IIFT offers both online and offline learning modes."],
+                                    ["Are classes online or offline?", "IIOFT offers both online and offline learning modes."],
                                     ["Are classes live or recorded?", "We provide live classes and recorded lectures."]
                                 ]
                             },
                             {
                                 title: "Certification & Placement",
-                                subtitle: "Learn more about certification and career support at IIFT.",
+                                subtitle: "Learn more about certification and career support at IIOFT.",
                                 items: [
                                     ["Will I receive a certificate?", "Yes, students receive an official certificate after completion."],
-                                    ["Does IIFT provide placement assistance?", "Yes, we provide placement support and interview guidance."]
+                                    ["Does IIOFT provide placement assistance?", "Yes, we provide placement support and interview guidance."]
                                 ]
                             },
                             {
                                 title: "Frequently Asked Questions",
-                                subtitle: "Find answers to common questions about courses at IIFT.",
+                                subtitle: "Find answers to common questions about courses at IIOFT.",
                                 items: [
-                                    ["What courses are available at IIFT?", "IIFT offers Web Development, Data Science, AI, Cyber Security, Digital Marketing, and Software Development."],
+                                    ["What courses are available at IIOFT?", "IIOFT offers Web Development, Data Science, AI, Cyber Security, Digital Marketing, and Software Development."],
                                     ["What is the duration of the courses?", "The course duration ranges from 3 months to 1 year depending on the selected program."],
                                     ["Can beginners apply?", "Yes, beginners can apply. We offer foundation-level courses."]
                                 ]
@@ -116,7 +116,7 @@ export default function Contact() {
             {/* CTA */}
             <div className='bg-blue-600 text-white text-center py-6 sm:py-12 px-3 sm:px-6'>
                 <h2 className='text-xl sm:text-2xl md:text-3xl font-semibold'>
-                    Ready to Start Your Future With IIFT?
+                    Ready to Start Your Future With IIOFT?
                 </h2>
             </div>
             {/* Contact Info Cards */}
@@ -132,7 +132,7 @@ export default function Contact() {
                 <div className='bg-white rounded-2xl shadow-lg p-4 sm:p-6 text-center hover:shadow-2xl transition'>
                     <CiLocationOn className='text-2xl sm:text-3xl mx-auto text-blue-600 mb-3 sm:mb-4  animate-pulse' />
                     <h3 className='text-base sm:text-xl font-semibold mb-1 sm:mb-2'>Location</h3>
-                    <p className='text-sm sm:text-base'>IIFT Institute</p>
+                    <p className='text-sm sm:text-base'>IIOFT Institute</p>
                     <p className='text-sm sm:text-base'>Delhi, Dwarka (India)</p>
                 </div>
 
@@ -146,13 +146,13 @@ export default function Contact() {
                 <div className='bg-white rounded-2xl shadow-lg p-4 sm:p-6 text-center hover:shadow-2xl transition'>
                     <MdOutlineMarkEmailRead className='text-2xl sm:text-3xl mx-auto text-blue-600 mb-3 sm:mb-4 animate-pulse' />
                     <h3 className='text-base sm:text-xl font-semibold mb-1 sm:mb-2'>Email</h3>
-                    <p className='text-sm sm:text-base'>iift.education01@gmail.com</p>
+                    <p className='text-sm sm:text-base'>iioft.education@gmail.com</p>
                 </div>
 
             </div>
             <div className="bg-blue-950 flex justify-center items-center mt-4 h-10 md:h-12 px-2 md:px-0">
                 <p className="text-white text-xs sm:text-sm md:text-sm text-center">
-                    © 2026 IIFT | All Rights Reserved | Designed by Web Developer
+                    © 2026 IIOFT | All Rights Reserved | Designed by Web Developer
                 </p>
             </div>
 

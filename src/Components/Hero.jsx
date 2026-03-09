@@ -214,7 +214,7 @@ export default function Hero() {
               { icon: <FaHandshakeSimple />, title: "Strong Brand Reputation" },
               { icon: <BsPersonVcardFill />, title: "Real-World Projects" },
               { icon: <RiGalleryFill />, title: "360° Career Support" },
-              { icon: <FaGlobe />, title: "IIFT® Alumni Status" },
+              { icon: <FaGlobe />, title: "IIOFT® Alumni Status" },
             ].map((item, i) => (
 
               <motion.div

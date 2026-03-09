@@ -76,10 +76,10 @@ const About = () => {
         className="py-16 bg-linear-to-r from-indigo-600 to-blue-600 text-center text-white px-6"
       >
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
-          About <span className="font-serif">(IIFT)</span>
+          About <span className="font-serif">(IIOFT)</span>
         </h2>
         <p className="text-lg md:text-xl max-w-4xl mx-auto">
-          IIFT is dedicated to equipping students with knowledge and skills
+          IIOFT is dedicated to equipping students with knowledge and skills
           for emerging technologies and global challenges.
         </p>
       </motion.section>
@@ -147,7 +147,7 @@ const About = () => {
         className="py-20 px-6 bg-white"
       >
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          Why Choose (IIFT)
+          Why Choose (IIOFT)
         </h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
@@ -181,7 +181,7 @@ const About = () => {
         className="py-20 bg-linear-to-r from-blue-600 to-indigo-600 text-white text-center px-6"
       >
         <h2 className="text-4xl font-bold mb-6">
-          Shape Your Future with IIFT
+          Shape Your Future with IIOFT
         </h2>
         <p className="text-lg">
           Explore our programs and admissions to begin your journey today.
@@ -191,7 +191,7 @@ const About = () => {
       {/* FOOTER */}
       <div className="bg-blue-950 flex justify-center items-center h-12">
         <p className="text-white text-sm text-center">
-          © 2026 IIFT | All Rights Reserved
+          © 2026 IIOFT | All Rights Reserved
         </p>
       </div>
 
