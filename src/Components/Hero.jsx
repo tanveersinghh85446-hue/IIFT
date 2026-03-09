@@ -340,7 +340,7 @@ export default function Hero() {
               alt="Logo"
             />
             <p className="text-xl">
-              International Institute of Futurisitc Technology (IIFT) prepares students with practical skills and advanced knowledge.
+              International Institute of Futurisitc Technology (IIOFT) prepares students with practical skills and advanced knowledge.
             </p>
 
             {/* ICONS */}
@@ -474,12 +474,10 @@ export default function Hero() {
 
         <div className="bg-blue-950 flex justify-center items-center mt-4 h-10 md:h-12 px-2 md:px-0">
           <p className="text-white text-xs sm:text-sm md:text-sm text-center">
-            © 2026 IIFT | All Rights Reserved | Designed by Web Developer
+            © 2026 IIOFT | All Rights Reserved | Designed by Web Developer
           </p>
         </div>
       </div>
-
-
 
     </div>
   );
