@@ -132,7 +132,7 @@ export default function Hero() {
             <br />
 
             <span className="text-yellow-400">Skill Up with </span>
-            <span className="text-blue-400 font-bold">IIFT</span>
+            <span className="text-blue-400 font-bold">IIOFT</span>
 
           </p>
 
@@ -200,7 +200,7 @@ export default function Hero() {
             viewport={{ once: true }}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold"
           >
-            The <span className="text-blue-600 font-serif">IIFT</span> pro's
+            The <span className="text-blue-600 font-serif">IIOFT</span> pro's
           </motion.h2>
         </div>
 
