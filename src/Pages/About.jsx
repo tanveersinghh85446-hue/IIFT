@@ -1,27 +1,62 @@
 import { motion } from "framer-motion";
 import { MdOndemandVideo } from "react-icons/md";
 
+// ─── Shared animation variants ────────────────────────────────────────────────
+
 const fadeUp = {
   hidden: { opacity: 0, y: 60 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8 }
-  }
+  show: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 };
 
 const stagger = {
   hidden: {},
-  show: {
-    transition: { staggerChildren: 0.2 }
-  }
+  show: { transition: { staggerChildren: 0.2 } },
 };
 
-const About = () => {
+const fadeIn = {
+  initial: { opacity: 0 },
+  whileInView: { opacity: 1 },
+  transition: { duration: 1 },
+  viewport: { once: true },
+};
+
+const slideUp = {
+  initial: { opacity: 0, y: 80 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 1 },
+  viewport: { once: true },
+};
+
+const scaleIn = {
+  initial: { scale: 0.9, opacity: 0 },
+  whileInView: { scale: 1, opacity: 1 },
+  transition: { duration: 0.8 },
+  viewport: { once: true },
+};
+
+// ─── Static data ──────────────────────────────────────────────────────────────
+
+const MISSION_VISION = [
+  { title: "Mission", text: "To nurture innovative minds and prepare students for future technologies." },
+  { title: "Vision", text: "To be a leading hub for cutting-edge research and futuristic education." },
+];
+
+const GALLERY_IMAGES = ["/AB.jpeg", "/AB2.jpeg", "/Team.jpeg"];
+
+const USP_ITEMS = [
+  "Advanced Curriculum",
+  "State-of-the-Art Labs",
+  "Expert Faculty",
+  "Global Opportunities",
+];
+
+// ─── Component ────────────────────────────────────────────────────────────────
+
+export default function About() {
   return (
     <div className="font-sans text-gray-800 bg-gray-50 overflow-hidden">
 
-      {/*  HEADER */}
+      {/* HEADER */}
       <motion.header
         initial={{ opacity: 0, y: -60 }}
         animate={{ opacity: 1, y: 0 }}
@@ -31,48 +66,32 @@ const About = () => {
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
           International Institute of Futuristic Technology
         </h1>
-        <p className="mt-4 text-lg opacity-90">
-          Shaping minds for tomorrow's technology
-        </p>
+        <p className="mt-4 text-lg opacity-90">Shaping minds for tomorrow's technology</p>
       </motion.header>
 
-      {/*  MISSION & VISION */}
+      {/* MISSION & VISION */}
       <motion.section
-        variants={stagger}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
+        variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }}
         className="py-16 px-4"
       >
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
-
-          {["Mission", "Vision"].map((item, i) => (
+          {MISSION_VISION.map(({ title, text }) => (
             <motion.div
-              key={i}
+              key={title}
               variants={fadeUp}
               whileHover={{ scale: 1.05 }}
               className="p-10 rounded-3xl backdrop-blur-lg bg-white/40 border border-white shadow-2xl text-center"
             >
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-blue-700">
-                {item}
-              </h2>
-              <p className="text-lg font-medium">
-                {item === "Mission"
-                  ? "To nurture innovative minds and prepare students for future technologies."
-                  : "To be a leading hub for cutting-edge research and futuristic education."}
-              </p>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-blue-700">{title}</h2>
+              <p className="text-lg font-medium">{text}</p>
             </motion.div>
           ))}
-
         </div>
       </motion.section>
 
-      {/*  ABOUT OVERVIEW */}
+      {/* ABOUT OVERVIEW */}
       <motion.section
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
+        {...fadeIn}
         className="py-16 bg-linear-to-r from-indigo-600 to-blue-600 text-center text-white px-6"
       >
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -84,17 +103,13 @@ const About = () => {
         </p>
       </motion.section>
 
-      {/*  IMAGE GALLERY */}
+      {/* IMAGE GALLERY */}
       <motion.section
-        variants={stagger}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
+        variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }}
         className="py-20 px-6 bg-gray-100"
       >
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-
-          {["/AB.jpeg", "/AB2.jpeg", "/Team.jpeg"].map((img, i) => (
+          {GALLERY_IMAGES.map((img, i) => (
             <motion.div
               key={i}
               variants={fadeUp}
@@ -106,19 +121,15 @@ const About = () => {
                 alt="Gallery"
                 className="w-full h-96 object-cover transition duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent" />
             </motion.div>
           ))}
-
         </div>
       </motion.section>
 
-      {/*  VIDEO SECTION */}
+      {/* VIDEO SECTION */}
       <motion.section
-        initial={{ opacity: 0, y: 80 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
+        {...slideUp}
         className="py-20 bg-linear-to-r from-blue-800 to-indigo-900 text-center text-white px-6"
       >
         <div className="flex justify-center items-center gap-4 mb-10 animate-pulse">
@@ -126,38 +137,22 @@ const About = () => {
           <h2 className="text-4xl font-bold">Our Learning Environment</h2>
           <MdOndemandVideo className="text-5xl" />
         </div>
-
         <div className="max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
           <video className="w-full aspect-video object-cover" controls>
             <source src="VIDEO.mp4" type="video/mp4" />
           </video>
         </div>
-
-        <h3 className="mt-10 text-3xl font-serif">
-          Hands On Skill Development
-        </h3>
+        <h3 className="mt-10 text-3xl font-serif">Hands On Skill Development</h3>
       </motion.section>
 
-      {/*  USP SECTION */}
+      {/* USP SECTION */}
       <motion.section
-        variants={stagger}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
+        variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }}
         className="py-20 px-6 bg-white"
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          Why Choose (IIOFT)
-        </h2>
-
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Why Choose (IIOFT)</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-
-          {[
-            "Advanced Curriculum",
-            "State-of-the-Art Labs",
-            "Expert Faculty",
-            "Global Opportunities"
-          ].map((item, i) => (
+          {USP_ITEMS.map((item, i) => (
             <motion.div
               key={i}
               variants={fadeUp}
@@ -168,35 +163,23 @@ const About = () => {
               <p>Designed for future industries and global careers.</p>
             </motion.div>
           ))}
-
         </div>
       </motion.section>
 
-      {/*  CTA */}
+      {/* CTA */}
       <motion.section
-        initial={{ scale: 0.9, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
+        {...scaleIn}
         className="py-20 bg-linear-to-r from-blue-600 to-indigo-600 text-white text-center px-6"
       >
-        <h2 className="text-4xl font-bold mb-6">
-          Shape Your Future with IIOFT
-        </h2>
-        <p className="text-lg">
-          Explore our programs and admissions to begin your journey today.
-        </p>
+        <h2 className="text-4xl font-bold mb-6">Shape Your Future with IIOFT</h2>
+        <p className="text-lg">Explore our programs and admissions to begin your journey today.</p>
       </motion.section>
 
       {/* FOOTER */}
       <div className="bg-blue-950 flex justify-center items-center h-12">
-        <p className="text-white text-sm text-center">
-          © 2026 IIOFT | All Rights Reserved
-        </p>
+        <p className="text-white text-sm text-center">© 2026 IIOFT | All Rights Reserved</p>
       </div>
 
     </div>
   );
-};
-
-export default About;
+}
